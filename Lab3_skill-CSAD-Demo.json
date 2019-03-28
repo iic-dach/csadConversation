@@ -547,7 +547,7 @@
       },
       "actions": [
         {
-          "name": "/kpschlotter%40gmail.com_dev_gb/actions/Bluemix_kps-cloudintroDb_newkey/create-document",
+          "name": "/<yourspace>/actions/Bluemix_kps-cloudintroDb_newkey/create-document",
           "type": "server",
           "parameters": {
             "doc": {
@@ -660,7 +660,7 @@
       "context": {
         "private": {
           "my_credentials": {
-            "api_key": "708d5c8e-bc04-42bb-a82b-234113d4bd8a:bltDOWKWtORMfRm04nimT9jTsHGtQ5N2ZvLsbqjAIHJ9T2cFJAE4XBnU8vI0EUGm"
+            "api_key": "<yourapikey>"
           }
         }
       },
