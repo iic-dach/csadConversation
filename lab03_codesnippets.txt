@@ -1,0 +1,357 @@
+******** Step 80 username/passowrd version *****************
+{
+  "context": {
+    "private": {
+      "my_credentials": {
+        "api_key": "<yourCloudFunctionsAPIKey"
+      }
+    }
+  },
+  "output": {
+    "text": {
+      "values": [
+        "Welcome to the CSAD Demo!"
+      ],
+      "selection_policy": "sequential"
+    }
+  }
+}
+***********************************
+******** Step 83 username/passowrd version *****************
+{
+  "output": {
+    "text": {
+      "values": [],
+      "selection_policy": "sequential"
+    }
+  },
+  "actions": [
+    {
+      "name": "/kpschxxxx.com_dev_gb/actions/Bluemix_kps-cloudintroDb_newkey/create-document",
+      "type": "server",
+      "parameters": {
+        "doc": {
+          "date": "$date",
+          "time": "$time",
+          "number": "$number",
+          "locations": "$locations"
+        },
+        "dbname": "reservations"
+      },
+      "credentials": "$private.my_credentials",
+      "result_variable": "$my_result"
+    }
+  ]
+}
+***********************************
+******** Step 91 username/passowrd version *****************
+https://<host of your service>/assistant/api/v1/workspaces?version=2019-02-28
+***********************************
+******** Step 93 username/passowrd version *****************
+https://<host of your service>/assistant/api/v1/workspaces/<YOUR workspaceid from Step18>?version=2019-02-28
+***********************************
+******** Step 94 username/passowrd version *****************
+https://<host of your service>/assistant/api/v1/workspaces/<YOUR workspaceid from Step19>/message?version=2019-02-28
+
+{"input": 
+    {"text": ""},
+    "context": {
+        "conversation_id": "",
+        "system": {
+            "dialog_stack":[{"dialog_node":"root"}],
+            "dialog_turn_counter": 0,
+            "dialog_request_counter": 0
+        }
+    }
+}
+***********************************
+******** Step 95 username/passowrd version *****************
+{"input": 
+    {"text": "turn on the lights"},
+    "context": {
+        "conversation_id": "",
+        "system": {
+            "dialog_stack": [
+                {
+                    "dialog_node": "root"
+                }
+            ],
+            "dialog_turn_counter": 1,
+            "dialog_request_counter": 1,
+            "_node_output_map": {
+                "Welcome": [
+                    0
+                ]
+            },
+            "branch_exited": true,
+            "branch_exited_reason": "completed"
+        }
+    }
+}
+
+https://<your service host>/assistant/api/v1/workspaces/<your workspaceid>/dialog_nodes?version=2019-02-28
+***********************************
+******** Step 99 username/passowrd version *****************
+{
+  "name": "csadconversation",
+  "version": "1.0.0",
+  "description": "A simple Watson Assistant example",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Klaus-Peter Schlotter",
+  "license": "ISC"
+}
+***********************************
+******** Step 101 username/passowrd version *****************
+npm install --save express ejs morgan body-parser watson-developer-cloud
+***********************************
+******** Step 102 username/passowrd version *****************
+var config = { 
+  watson: {
+    assistant: { 
+      username: "<yourServiceUsername>", 
+      password: "<yourServicePassword>", 
+      version: "2019-02-28",
+      url: "yourServiceUrl",
+      workspace_id: "<yourWorkspaceId>" 
+    } 
+  } 
+}; 
+module.exports = config;
+***********************************
+******** Step 102 apikey version *****************
+var config = { 
+  watson: {
+    assistant: { 
+      iam_apikey: "<yourApiKey>", 
+      version: "2019-02-28",
+      url: "yourServiceUrl",
+      workspace_id: "<yourWorkspaceId>" 
+    } 
+  } 
+}; 
+module.exports = config;
+***********************************
+******** Step 104 *****************
+const path = require('path');
+
+const express = require('express');
+const bodyParser = require('body-parser');
+const logger = require('morgan');
+
+const app = express();
+app.use(bodyParser.json({ limit: '1mb' }));
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(logger('dev'));
+
+const port = process.env.PORT || 3000;
+app.set('view engine', 'ejs');
+app.set('views', 'views');
+
+const watsonRoutes = require('./routes/watson');
+app.use(watsonRoutes);
+
+app.use(function (requst, response) {
+  response.status(404).render("404");
+});
+
+app.listen(port, () => {
+  console.log('Express app started on port ' + port);
+})
+***********************************
+******** Step 105 *****************
+const express = require('express');
+
+const watsonController = require('../controllers/watson');
+
+const router = express.Router();
+
+router.get('/', watsonController.getIndex);
+
+router.post('/', watsonController.postMessage);
+
+module.exports = router;
+***********************************
+******** Step 106 *****************
+const AssistantV1 = require('watson-developer-cloud/assistant/v1');
+const config = require('../config');
+
+const watsonAssistant = new AssistantV1(config.watson.assistant);
+
+exports.getIndex = (req, res, next) => {
+  res.render('index');
+}
+
+exports.postMessage = (req, res, next) => {
+  console.log('Text:' + req.body.input);
+  const parameters = { 
+    'input': req.body.input, 
+    'context': req.body.context, 
+    'workspace_id': config.watson.assistant.workspace_id 
+  };
+  assistantMessage(parameters)
+    .then(response => {
+      console.log(JSON.stringify(response, null, 2)); 
+      res.json(response);
+    })
+    .catch(err => {
+      console.log('error:', err);
+    }); 
+}
+
+
+// convert assistant.message() to Promise
+assistantMessage = (params) => {
+  return new Promise((resolve, reject) => {
+    watsonAssistant.message(params, (err, res) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(res);
+      }
+    })
+  });
+}
+***********************************
+******** Step 108 *****************
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>EAG Watson Assistant Lab</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" crossorigin="anonymous">
+    <link rel='stylesheet' href='/stylesheets/styles.css' /> 
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" crossorigin="anonymous"></script>
+    <script src="/js/scripts.js"></script>
+  </head>
+  <body onLoad="init()"> 
+    <div class="container" style="text-align: center"><body class="container">
+      <div class="row"><div class="col-md-12"><p><h2>IBM EAG Watson Assistant Lab</h2></p></div></div>
+***********************************
+******** Step 109 *****************
+    <p><small>IBM Ecosystem Advocacy Group – 2019</small></p>
+  </body>
+</html>
+***********************************
+******** Step 110 *****************
+<% include header %>
+<h2>404! Page not found.</h2>
+<% include footer %>
+***********************************
+******** Step 111 *****************
+<% include header %>
+<p/>
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="input-group col-md-6">
+   <input type="text" id="text" name="text" class="form-control" placeholder="Enter text sent to Watson">
+    <span class="input-group-btn">
+      <button class="btn btn-primary" onclick="sendMessage()" >Send</button>
+    </span>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-6 mt-2">
+    <div><b>Conversation History:</b></div> 
+    <div id="history" class="form-control col text-left" ></div> 
+  </div>
+</div>
+<% include footer %>
+***********************************
+******** Step 114 *****************
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.form-control {
+  margin-right: 5px;
+}
+***********************************
+******** Step 115 *****************
+var context = {};
+
+function updateChatLog(user, message) {
+  if (message) { 
+    var div = document.createElement("div"); 
+    div.innerHTML = "<b>" + user + "</b>: " + message;
+    document.getElementById("history").appendChild(div); 
+    document.getElementById("text").value = ""; 
+  } 
+}
+
+function sendMessage() { 
+  var text = document.getElementById("text").value; 
+  updateChatLog("You", text); 
+  var payload = {}; 
+  if (text) { 
+    payload.input = {"text": text};
+  };
+  if (context) {
+    payload.context = context;
+  }; 
+  var xhr = new XMLHttpRequest(); 
+  xhr.onreadystatechange = function() {
+      if (xhr.readyState == 4) {
+        if (xhr.status == 200) { 
+        var json = JSON.parse(xhr.responseText); 
+        context = json.context;
+          updateChatLog("Watson", json.output.text); 
+      }
+    }
+  }
+  xhr.open("POST", "./", true);
+  xhr.setRequestHeader("Content-type", "application/json");
+  xhr.send(JSON.stringify(payload)); 
+}
+
+function init() {
+    document.getElementById("text").addEventListener("keydown", function(e) {
+      if (!e) {
+        var e = window.event;
+      }
+      if (e.keyCode == 13) {
+        sendMessage();
+      } 
+    }, 
+    false); 
+  sendMessage(); 
+} 
+***********************************
+******** Step 128 username/passowrd version *****************
+      if (!response.input.text) {
+        return res.json(response);
+      }
+      console.log("Detected input: " + response.input.text);
+      if (response.intents.length > 0) {
+        var intent = response.intents[0];
+        console.log("Detected intent: " + intent.intent);
+        console.log("Confidence: " + intent.confidence);
+      }
+      if (response.entities.length > 0) {
+        var entity = response.entities[0];
+        console.log("Detected entity: " + entity.entity);
+        console.log("Value: " + entity.value);
+        if ((entity.entity === 'help') && (entity.value === 'time')) {
+          var msg = 'The current time is ' + new Date().toLocaleTimeString();
+          console.log(msg);
+          response.output.text = msg;
+        }
+      }
+***********************************
+******** Step 137 username/passowrd version *****************
+applications:
+- name: csadConversation-xxx
+  path: .
+  buildpack: sdk-for-nodejs
+  command: node app.js
+  memory: 256M
+***********************************

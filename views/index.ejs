@@ -1,0 +1,19 @@
+<% include header %>
+    <p/>
+    <div class="row">
+    <div class="col-md-3"></div>
+      <div class="input-group col-md-6">
+          <input type="text" id="text" name="text" class="form-control" placeholder="Enter text sent to Watson">
+          <span class="input-group-btn">
+               <button class="btn btn-primary" onclick="sendMessage()" >Send</button>
+          </span>
+       </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6 mt-2">
+          <div><b>Conversation History:</b></div> 
+          <div id="history" class="form-control col text-left" ></div> 
+        </div>
+      </div>
+<% include footer %>
