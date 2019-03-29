@@ -1,0 +1,26 @@
+cardevice,vehicle stability control
+cardevice,phone,iphone,ipod,tablet,bluetooth
+cardevice,usb device,usb
+cardevice,window,windows
+cardevice,vehicle,car
+cardevice,oil,engine oil
+cardevice,lights bulb,bulb,lights,headlights bulb,high-beams,fog lamps,fog light,ambient lights
+cardevice,cruise control,adaptive cruise control,cruise,vehicle speed,cruise speed
+cardevice,car stereo,radio,radio station
+cardevice,seat,seat position,seat heating
+cardevice,screen
+cardevice,traction control
+cardevice,pre collision system,collision system
+cardevice,vehicle distance
+cardevice,traffic info
+cardevice,windscreen washer,washer fluid
+cardevice,blind spot monitor
+cardevice,electric power steering
+cardevice,alarm,car alarm
+cardevice,rear view mirror,mirror inside,exterior mirrors
+cardevice,head restraint
+cardevice,fuel tank flap,fuel filler flap
+cardevice,fuel
+cardevice,engine coolant,coolant
+cardevice,brake,parking break
+cardevice,doors,front doors,back doors

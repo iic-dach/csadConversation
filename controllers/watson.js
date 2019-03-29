@@ -1,7 +1,9 @@
 const AssistantV1 = require('watson-developer-cloud/assistant/v1');
+const DiscoveryV1 = require('watson-developer-cloud/discovery/v1');
 const config = require('../config');
 
 const watsonAssistant = new AssistantV1(config.watson.assistant);
+const discovery = new DiscoveryV1(config.watson.discovery);
 
 exports.getIndex = (req, res, next) => {
   res.render('index');
@@ -9,34 +11,53 @@ exports.getIndex = (req, res, next) => {
 
 exports.postMessage = (req, res, next) => {
   console.log('Text:' + req.body.input);
-  const parameters = { 
+  let assistantResult = null;
+  const assistantParam = { 
     'input': req.body.input, 
     'context': req.body.context, 
     'workspace_id': config.watson.assistant.workspace_id 
   };
-  assistantMessage(parameters)
-    .then(response => {
-      if (!response.input.text) {
-        return res.json(response);
-      }
-      console.log("Detected input: " + response.input.text);
-      if (response.intents.length > 0) {
-        var intent = response.intents[0];
+  assistantMessage(assistantParam)
+    .then(assistantResult => {
+      let intent = null;
+      let entity = null;
+
+      if (assistantResult.intents.length > 0) {
+        intent = assistantResult.intents[0];
         console.log("Detected intent: " + intent.intent);
         console.log("Confidence: " + intent.confidence);
       }
-      if (response.entities.length > 0) {
-        var entity = response.entities[0];
+      if (assistantResult.entities.length > 0) {
+        entity = assistantResult.entities[0];
         console.log("Detected entity: " + entity.entity);
         console.log("Value: " + entity.value);
-        if ((entity.entity === 'help') && (entity.value === 'time')) {
-          var msg = 'The current time is ' + new Date().toLocaleTimeString();
-          console.log(msg);
-          response.output.text = msg;
-        }
       }
-      console.log(JSON.stringify(response, null, 2)); 
-      res.json(response);
+      if (entity != null && (entity.entity === 'help') && (entity.value === 'time')) {
+        let msg = 'The current time is ' + new Date().toLocaleTimeString();
+        console.log(msg);
+        assistantResult.output.text = msg;
+      }
+      if (intent != null && intent.intent === "out_of_scope" && assistantResult.entities.indexOf("cardevice") >= -1) {
+        let discoveryParams = {
+          'query': assistantResult.input.text,
+          'environment_id': config.watson.discoveryEnv.environmentId,
+          'collection_id': config.watson.discoveryEnv.collectionId,
+          'passages': true,
+          return: 'text, title, sourceUrl, passages'
+        };
+        discoveryQuery(discoveryParams)
+          .then(discoveryResult => {
+            console.log(discoveryResult);
+            assistantResult.output.text = discoveryResult.passages[0].passage_text;
+            return res.json(assistantResult);
+          })
+          .catch(err => {
+            console.log('error:', err);
+          }); 
+      } else {
+//      console.log(JSON.stringify(result, null, 2)); 
+        res.json(assistantResult);
+      }
     })
     .catch(err => {
       console.log('error:', err);
@@ -54,4 +75,16 @@ assistantMessage = (params) => {
       }
     })
   });
+}
+//convert discovery.query() to Promise
+discoveryQuery = (params) => {
+  return new Promise((resolve, reject) => {
+    discovery.query(params, (error, result) => {
+      if (error) {
+        reject(error);
+      } else {
+        resolve(result)
+      }
+    })
+  })
 }

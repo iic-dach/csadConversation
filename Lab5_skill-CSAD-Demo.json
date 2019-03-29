@@ -1,0 +1,1395 @@
+{
+  "name": "CSAD Demo",
+  "intents": [
+    {
+      "intent": "turn_on",
+      "examples": [
+        {
+          "text": "Arm the security system"
+        },
+        {
+          "text": "Lock the doors"
+        },
+        {
+          "text": "I need lights"
+        },
+        {
+          "text": "Turn on the lights"
+        },
+        {
+          "text": "Start recording"
+        },
+        {
+          "text": "headlights"
+        }
+      ],
+      "description": "Turn on"
+    },
+    {
+      "intent": "book_table",
+      "examples": [
+        {
+          "text": "I want to reserve a table for dinner"
+        },
+        {
+          "text": "Can 3 of us get a table for lunch?"
+        },
+        {
+          "text": "Do you have openings for next Wednesday at 7?"
+        },
+        {
+          "text": "Is there availability for 4 on Tuesday night?"
+        },
+        {
+          "text": "I'd like to come in for brunch tomorrow"
+        },
+        {
+          "text": "Can I reserve a table?"
+        },
+        {
+          "text": "I'd like to make a reservation"
+        }
+      ],
+      "description": "Book a table in one of the restaurants"
+    },
+    {
+      "intent": "hello",
+      "examples": [
+        {
+          "text": "Greetings"
+        },
+        {
+          "text": "Hi"
+        },
+        {
+          "text": "Hello"
+        },
+        {
+          "text": "Good morning"
+        },
+        {
+          "text": "Howdy"
+        }
+      ],
+      "description": "Greeting for app"
+    },
+    {
+      "intent": "out_of_scope",
+      "examples": [
+        {
+          "text": "how do i disable the vehicle stability control"
+        },
+        {
+          "text": "how do i control a phone"
+        },
+        {
+          "text": "how do i connect USB device"
+        },
+        {
+          "text": "how do i connect my phone"
+        },
+        {
+          "text": "how do i close the window"
+        },
+        {
+          "text": "how do i clean the vehicle"
+        },
+        {
+          "text": "how do i change the oil"
+        },
+        {
+          "text": "how do i change the lights bulb"
+        },
+        {
+          "text": "how do i change the headlight bulbs"
+        },
+        {
+          "text": "how do i resume cruise control"
+        },
+        {
+          "text": "how do i resume the cruise speed"
+        },
+        {
+          "text": "how do i resume the vehicle speed"
+        },
+        {
+          "text": "how do i save my favourite radio station"
+        },
+        {
+          "text": "how do i save the seat position"
+        },
+        {
+          "text": "how do i scroll the screen"
+        },
+        {
+          "text": "how do i select a desired track on the iPod"
+        },
+        {
+          "text": "how do i select the song on the iPod"
+        },
+        {
+          "text": "how do i set the adaptive cruise control speed"
+        },
+        {
+          "text": "how do i set the cruise speed"
+        },
+        {
+          "text": "how to change engine oil"
+        },
+        {
+          "text": "how to adjust the vehicle to vehicle distance"
+        },
+        {
+          "text": "how often should i change the oil"
+        },
+        {
+          "text": "How frequently should I change the oil"
+        },
+        {
+          "text": "how do i wash the car"
+        },
+        {
+          "text": "how do i use the traction control"
+        },
+        {
+          "text": "how do i use the pre collision system"
+        },
+        {
+          "text": "how do i use the iPod"
+        },
+        {
+          "text": "how do i turn on high beams"
+        },
+        {
+          "text": "how do i turn on the alarm"
+        },
+        {
+          "text": "how do i turn on the cruise control"
+        },
+        {
+          "text": "how do i turn on the fog lamps"
+        },
+        {
+          "text": "How do I turn on the high-beams"
+        },
+        {
+          "text": "how do i turn on the pre collision system"
+        },
+        {
+          "text": "how do i turn on the traction control"
+        },
+        {
+          "text": "how do i turn on traffic info"
+        },
+        {
+          "text": "how do i turn on windscreen washer"
+        },
+        {
+          "text": "how do i unlock the windows"
+        },
+        {
+          "text": "How do I use cruise control"
+        },
+        {
+          "text": "how do i use the blind spot monitor"
+        },
+        {
+          "text": "how do i use the electric power steering"
+        },
+        {
+          "text": "how do i change oil"
+        },
+        {
+          "text": "how do i cancel cruise control"
+        },
+        {
+          "text": "how do i browse the tracks on the iPod"
+        },
+        {
+          "text": "how do i arm the alarm"
+        },
+        {
+          "text": "how do i adjust the vehicle distance"
+        },
+        {
+          "text": "how do i adjust the rear view mirror"
+        },
+        {
+          "text": "how do i adjust the mirror inside"
+        },
+        {
+          "text": "how do i adjust the mirror"
+        },
+        {
+          "text": "how do i adjust the cruise control speed"
+        },
+        {
+          "text": "how do i adjust head restraint"
+        },
+        {
+          "text": "how do i adjust exterior mirrors"
+        },
+        {
+          "text": "how can i replace light bulb"
+        },
+        {
+          "text": "how can i lock the car"
+        },
+        {
+          "text": "how can i find current level of oil"
+        },
+        {
+          "text": "how can i connect the phone"
+        },
+        {
+          "text": "Hi, I cannot find the button for emergency lamp"
+        },
+        {
+          "text": "Hi, how can I check my tire pressure?"
+        },
+        {
+          "text": "fuel tank flap"
+        },
+        {
+          "text": "coolant level"
+        },
+        {
+          "text": "checking the engine oil"
+        },
+        {
+          "text": "changing the light bulb"
+        },
+        {
+          "text": "changing gears"
+        },
+        {
+          "text": "change bulb"
+        },
+        {
+          "text": "Can I play music through bluetooth from my phone"
+        },
+        {
+          "text": "bluetooth"
+        },
+        {
+          "text": "how can i change oil"
+        },
+        {
+          "text": "Where is the fuse box located"
+        },
+        {
+          "text": "Where is the fuse box"
+        },
+        {
+          "text": "where can i start air conditioning"
+        },
+        {
+          "text": "where are the lights"
+        },
+        {
+          "text": "where are fog lights"
+        },
+        {
+          "text": "what type of oil do i need"
+        },
+        {
+          "text": "what's the tires pressure"
+        },
+        {
+          "text": "What PSI do I inflate the spare tire to"
+        },
+        {
+          "text": "what kind of fuel should i use"
+        },
+        {
+          "text": "what kind of fuel does the car require"
+        },
+        {
+          "text": "what is the vehicle stability control"
+        },
+        {
+          "text": "what is the traction control"
+        },
+        {
+          "text": "what is the pre collision system"
+        },
+        {
+          "text": "what are the crash ratings"
+        },
+        {
+          "text": "turn off traffic info"
+        },
+        {
+          "text": "switch on fog light"
+        },
+        {
+          "text": "show me how to change the light bulbs"
+        },
+        {
+          "text": "refilling the engine coolant"
+        },
+        {
+          "text": "parking brake"
+        },
+        {
+          "text": "operating the radio"
+        },
+        {
+          "text": "opening the windows"
+        },
+        {
+          "text": "low coolant"
+        },
+        {
+          "text": "how do i fill in the engine oil"
+        },
+        {
+          "text": "Is there a warning light for low washer fluid"
+        },
+        {
+          "text": "Is there an automatic parallel park feature"
+        },
+        {
+          "text": "Is there a lane change assist feature"
+        },
+        {
+          "text": "how to turn on warning lights"
+        },
+        {
+          "text": "how to switch on the fog lights"
+        },
+        {
+          "text": "how to replace light bulbs"
+        },
+        {
+          "text": "How to connect bluetooth"
+        },
+        {
+          "text": "How do I program my radio stations"
+        },
+        {
+          "text": "how to change oil"
+        },
+        {
+          "text": "how do i set the vehicle speed"
+        },
+        {
+          "text": "how do i switch on the cruise control"
+        },
+        {
+          "text": "how do i tune the radio"
+        },
+        {
+          "text": "how do i turn off ambient lights"
+        },
+        {
+          "text": "how do i turn off the alarm"
+        },
+        {
+          "text": "how do i turn off the cruise control"
+        },
+        {
+          "text": "how do i turn off the high beams"
+        },
+        {
+          "text": "how do i turn off the traction control"
+        },
+        {
+          "text": "how do i turn off voice guidance"
+        },
+        {
+          "text": "how do i turn on adaptive cruise control"
+        },
+        {
+          "text": "how do i turn on ambient lights"
+        },
+        {
+          "text": "how do i turn on cruise control"
+        },
+        {
+          "text": "how do i turn on front seat heating"
+        },
+        {
+          "text": "how do i turn on headlamps"
+        },
+        {
+          "text": "how to change the oil"
+        },
+        {
+          "text": "how do i refill the engine oil"
+        },
+        {
+          "text": "how do i play the track on the iPod"
+        },
+        {
+          "text": "how do i play an iPod"
+        },
+        {
+          "text": "how do i pause song in my iPod"
+        },
+        {
+          "text": "How do I pair my iPhone to the radio"
+        },
+        {
+          "text": "How do I pair my android phone to the radio"
+        },
+        {
+          "text": "how do i open the window"
+        },
+        {
+          "text": "how do i open the tank fuel"
+        },
+        {
+          "text": "how do i open the side window"
+        },
+        {
+          "text": "how do i open the rear window"
+        },
+        {
+          "text": "how do i open the power windows"
+        },
+        {
+          "text": "how do i open the fuel filler flap"
+        },
+        {
+          "text": "how do i open the doors"
+        },
+        {
+          "text": "how do i lock the windows to prevent children from opening"
+        },
+        {
+          "text": "how do i lock the windows"
+        },
+        {
+          "text": "how do i lock the window"
+        },
+        {
+          "text": "how do i find the fuel consumption"
+        },
+        {
+          "text": "light bulbs replacement"
+        }
+      ]
+    },
+    {
+      "intent": "goodbye",
+      "examples": [
+        {
+          "text": "Bye"
+        },
+        {
+          "text": "See you later"
+        },
+        {
+          "text": "I am leaving"
+        },
+        {
+          "text": "Farewell"
+        },
+        {
+          "text": "Goodbye"
+        }
+      ],
+      "description": "Goodbye"
+    },
+    {
+      "intent": "Help-Misc",
+      "examples": [
+        {
+          "text": "I have a problem"
+        },
+        {
+          "text": "I need help"
+        },
+        {
+          "text": "I have a request"
+        },
+        {
+          "text": "I need information"
+        },
+        {
+          "text": "I would like some assistance"
+        }
+      ],
+      "description": "Help"
+    }
+  ],
+  "entities": [
+    {
+      "entity": "sys-date",
+      "values": []
+    },
+    {
+      "entity": "sys-time",
+      "values": []
+    },
+    {
+      "entity": "device",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "lights",
+          "synonyms": [
+            "bulb",
+            "lamp"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "security system",
+          "synonyms": [
+            "alarm"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "radio",
+          "synonyms": [
+            "car radio"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "doors",
+          "synonyms": [
+            "locks",
+            "gates"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "locations",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "First Street",
+          "synonyms": [
+            "first",
+            "1st"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Main Street",
+          "synonyms": [
+            "Main"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "sys-number",
+      "values": []
+    },
+    {
+      "entity": "help",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "time",
+          "synonyms": [
+            "clock",
+            "hour",
+            "minute",
+            "second"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "cardevice",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "windscreen washer",
+          "synonyms": [
+            "washer fluid"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "traffic info",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "vehicle distance",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "pre collision system",
+          "synonyms": [
+            "collision system"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "traction control",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "screen",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "seat",
+          "synonyms": [
+            "seat heating",
+            "seat position"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "car stereo",
+          "synonyms": [
+            "radio station",
+            "radio"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "cruise control",
+          "synonyms": [
+            "cruise speed",
+            "vehicle speed",
+            "cruise",
+            "adaptive cruise control"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "lights bulb",
+          "synonyms": [
+            "ambient lights",
+            "fog light",
+            "fog lamps",
+            "high-beams",
+            "headlights bulb",
+            "lights",
+            "bulb"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "doors",
+          "synonyms": [
+            "back doors",
+            "front doors"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "vehicle",
+          "synonyms": [
+            "car"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "window",
+          "synonyms": [
+            "windows"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "usb device",
+          "synonyms": [
+            "usb"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "phone",
+          "synonyms": [
+            "bluetooth",
+            "tablet",
+            "ipod",
+            "iphone"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "vehicle stability control",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "oil",
+          "synonyms": [
+            "engine oil"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "brake",
+          "synonyms": [
+            "parking break"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "engine coolant",
+          "synonyms": [
+            "coolant"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "fuel",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "fuel tank flap",
+          "synonyms": [
+            "fuel filler flap"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "head restraint",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "rear view mirror",
+          "synonyms": [
+            "exterior mirrors",
+            "mirror inside"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "alarm",
+          "synonyms": [
+            "car alarm"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "electric power steering",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "blind spot monitor",
+          "synonyms": []
+        }
+      ]
+    },
+    {
+      "entity": "lights",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "rear fog lamp",
+          "synonyms": [
+            "rear fog light"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "low beam",
+          "synonyms": [
+            "headlights",
+            "passing lights",
+            "dim light"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "fog lamp",
+          "synonyms": [
+            "fog light"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "high beam",
+          "synonyms": [
+            "full beam",
+            "main beam",
+            "brights"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    }
+  ],
+  "language": "en",
+  "metadata": {
+    "api_version": {
+      "major_version": "v1",
+      "minor_version": "2018-07-10"
+    }
+  },
+  "description": "",
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "Invalid light",
+      "output": {
+        "text": {
+          "values": [
+            "I'm sorry, I can only turn on some car related lights."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_4_1543324683575",
+      "metadata": {},
+      "conditions": "true",
+      "dialog_node": "node_6_1543325050049",
+      "previous_sibling": "node_5_1543324943176"
+    },
+    {
+      "type": "standard",
+      "title": "Light On",
+      "output": {
+        "text": {
+          "values": [
+            "OK! Turning on @lights light."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_4_1543324683575",
+      "metadata": {},
+      "conditions": "@lights",
+      "dialog_node": "node_5_1543324943176"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": "Which store you want to got to? First or Main?"
+      },
+      "parent": "slot_3_1543746258079",
+      "event_name": "focus",
+      "dialog_node": "handler_5_1543746258079",
+      "previous_sibling": "handler_4_1543746258079"
+    },
+    {
+      "type": "event_handler",
+      "parent": "slot_3_1543746258079",
+      "context": {
+        "locations": "@locations"
+      },
+      "conditions": "@locations",
+      "event_name": "input",
+      "dialog_node": "handler_4_1543746258079"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "I need some more information to continue. I will need the location, date, time, and number of people"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_1_1543745967346",
+      "metadata": {},
+      "event_name": "focus",
+      "dialog_node": "handler_2_1543746258055",
+      "previous_sibling": "node_1_1553593259014"
+    },
+    {
+      "type": "slot",
+      "parent": "node_1_1543745967346",
+      "variable": "$date",
+      "dialog_node": "slot_6_1543746650320",
+      "previous_sibling": "slot_3_1543746258079"
+    },
+    {
+      "type": "slot",
+      "parent": "node_1_1543745967346",
+      "variable": "$time",
+      "dialog_node": "slot_9_1543746710011",
+      "previous_sibling": "slot_6_1543746650320"
+    },
+    {
+      "type": "slot",
+      "parent": "node_1_1543745967346",
+      "variable": "$locations",
+      "dialog_node": "slot_3_1543746258079",
+      "previous_sibling": "handler_2_1543746258055"
+    },
+    {
+      "type": "slot",
+      "parent": "node_1_1543745967346",
+      "variable": "$number",
+      "dialog_node": "slot_12_1543746770664",
+      "previous_sibling": "slot_9_1543746710011"
+    },
+    {
+      "type": "standard",
+      "title": "respond to cloud",
+      "output": {
+        "generic": [
+          {
+            "time": 5000,
+            "typing": true,
+            "response_type": "pause"
+          },
+          {
+            "values": [
+              {
+                "text": "Great, I have a table of $number people, on $date at $time at our $locations store. ($my_result.id)"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_1_1543745967346",
+      "metadata": {},
+      "conditions": "true",
+      "dialog_node": "node_1_1553593259014"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": "What day you want to come in?"
+      },
+      "parent": "slot_6_1543746650320",
+      "metadata": {},
+      "event_name": "focus",
+      "dialog_node": "handler_8_1543746650320",
+      "previous_sibling": "handler_7_1543746650320"
+    },
+    {
+      "type": "event_handler",
+      "parent": "slot_6_1543746650320",
+      "context": {
+        "date": "@sys-date"
+      },
+      "conditions": "@sys-date",
+      "event_name": "input",
+      "dialog_node": "handler_7_1543746650320"
+    },
+    {
+      "type": "standard",
+      "title": "Device On Off Check",
+      "output": {},
+      "parent": "node_7_1543325139789",
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "conditions": "true",
+      "dialog_node": "node_3_1553797280513",
+      "digress_out": "allow_all"
+    },
+    {
+      "type": "standard",
+      "title": "Additional Help",
+      "output": {
+        "text": {
+          "values": [
+            "I'm sorry, I can't help with that. For additional help, please call 555-2368."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_9_1543325539198",
+      "metadata": {},
+      "conditions": "true",
+      "dialog_node": "node_11_1543325647222",
+      "previous_sibling": "node_10_1543325600487"
+    },
+    {
+      "type": "standard",
+      "title": "Time",
+      "output": {
+        "text": {
+          "values": [],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_9_1543325539198",
+      "metadata": {},
+      "conditions": "@help:time",
+      "dialog_node": "node_10_1543325600487"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "text": {
+          "values": [
+            "I'll turn on the @device for you."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_3_1553797280513",
+      "context": {
+        "Alarmonoff": "on"
+      },
+      "metadata": {},
+      "conditions": "@device:(security system) && $app_action==\"on\"",
+      "dialog_node": "node_5_1553797691939",
+      "previous_sibling": "node_4_1553797350656"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "text": {
+          "values": [
+            "I'll switch on the @device for you"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_3_1553797280513",
+      "metadata": {},
+      "conditions": "@device && $app_action==\"on\"",
+      "dialog_node": "node_6_1553797854374",
+      "previous_sibling": "node_5_1553797691939"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "text": {
+          "values": [
+            "It looks like the @device is already on."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_3_1553797280513",
+      "metadata": {},
+      "conditions": "@device:(security system) && $app_action==\"on\" && $Alarmonoff==\"on\"",
+      "dialog_node": "node_4_1553797350656"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "text": {
+          "values": [
+            "Sorry I haven't learned answers to questions like this."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_8_1553843094098",
+      "metadata": {},
+      "conditions": "true",
+      "dialog_node": "node_10_1553843572731",
+      "previous_sibling": "node_9_1553843395276"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "text": {
+          "values": [
+            "That question is out of scope for this application, take a look at the Conversation Enhanced application to handle questions like these."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_8_1553843094098",
+      "metadata": {},
+      "conditions": "@cardevice",
+      "dialog_node": "node_9_1553843395276"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": "How many people in your party?"
+      },
+      "parent": "slot_12_1543746770664",
+      "event_name": "focus",
+      "dialog_node": "handler_14_1543746770664",
+      "previous_sibling": "handler_13_1543746770664"
+    },
+    {
+      "type": "event_handler",
+      "parent": "slot_12_1543746770664",
+      "context": {
+        "number": "@sys-number"
+      },
+      "conditions": "@sys-number",
+      "event_name": "input",
+      "dialog_node": "handler_13_1543746770664"
+    },
+    {
+      "type": "standard",
+      "title": "Devices",
+      "output": {
+        "text": {
+          "values": [],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_3_1543324638003",
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "condition",
+        "dialog_node": "node_3_1553797280513"
+      },
+      "conditions": "@device",
+      "dialog_node": "node_7_1543325139789",
+      "previous_sibling": "node_4_1543324683575"
+    },
+    {
+      "type": "standard",
+      "title": "Invalid device",
+      "output": {
+        "text": {
+          "values": [
+            "I'm sorry! I don't know how to do that. I can turn on lights, radio, or security system."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_3_1543324638003",
+      "metadata": {},
+      "conditions": "true",
+      "dialog_node": "node_8_1543325253024",
+      "previous_sibling": "node_7_1543325139789"
+    },
+    {
+      "type": "standard",
+      "title": "Lights",
+      "output": {
+        "text": {
+          "values": [
+            "OK! Whicht light would you like to turn on?"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_3_1543324638003",
+      "metadata": {},
+      "conditions": "@device:lights",
+      "dialog_node": "node_4_1543324683575"
+    },
+    {
+      "type": "standard",
+      "title": "Check out of Scope",
+      "output": {},
+      "parent": "node_7_1553843054883",
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "conditions": "true",
+      "dialog_node": "node_8_1553843094098",
+      "digress_out": "allow_all"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": "What time did you want to arrive?"
+      },
+      "parent": "slot_9_1543746710011",
+      "event_name": "focus",
+      "dialog_node": "handler_11_1543746710011",
+      "previous_sibling": "handler_10_1543746710011"
+    },
+    {
+      "type": "event_handler",
+      "parent": "slot_9_1543746710011",
+      "context": {
+        "time": "@sys-time"
+      },
+      "conditions": "@sys-time",
+      "event_name": "input",
+      "dialog_node": "handler_10_1543746710011"
+    },
+    {
+      "type": "standard",
+      "title": "Help",
+      "output": {
+        "text": {
+          "values": [
+            "How can I help you?"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "node_10_1543325600487"
+      },
+      "conditions": "#Help-Misc",
+      "dialog_node": "node_9_1543325539198",
+      "previous_sibling": "node_1_1543745967346"
+    },
+    {
+      "type": "standard",
+      "title": "Hello",
+      "output": {
+        "text": {
+          "values": [
+            "Hi! What can I do for you?"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "metadata": {},
+      "conditions": "#hello",
+      "dialog_node": "node_1_1543324451180",
+      "previous_sibling": "Welcome"
+    },
+    {
+      "type": "standard",
+      "title": "Goodbye",
+      "output": {
+        "text": {
+          "values": [
+            "Until our next meeting!"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "metadata": {},
+      "conditions": "#goodbye",
+      "dialog_node": "node_2_1543324518878",
+      "previous_sibling": "node_9_1543325539198"
+    },
+    {
+      "type": "standard",
+      "title": "Anything else",
+      "output": {
+        "text": {
+          "values": [
+            "I didn't understand. You can try rephrasing.",
+            "Can you reword your statement? I'm not understanding.",
+            "I didn't get your meaning."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "metadata": {},
+      "conditions": "anything_else",
+      "dialog_node": "Anything else",
+      "previous_sibling": "node_2_1543324518878"
+    },
+    {
+      "type": "standard",
+      "title": "Turn on",
+      "output": {
+        "text": {
+          "values": [],
+          "selection_policy": "sequential"
+        }
+      },
+      "context": {
+        "app_action": "on"
+      },
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "condition",
+        "dialog_node": "node_4_1543324683575"
+      },
+      "conditions": "#turn_on",
+      "dialog_node": "node_3_1543324638003",
+      "previous_sibling": "node_1_1543324451180"
+    },
+    {
+      "type": "standard",
+      "title": "Out of Scope",
+      "output": {
+        "text": {
+          "values": [],
+          "selection_policy": "sequential"
+        }
+      },
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "condition",
+        "dialog_node": "node_8_1553843094098"
+      },
+      "conditions": "#out_of_scope",
+      "dialog_node": "node_7_1553843054883",
+      "previous_sibling": "node_3_1543324638003"
+    },
+    {
+      "type": "frame",
+      "title": "Book a table",
+      "output": {
+        "text": {
+          "values": [],
+          "selection_policy": "sequential"
+        }
+      },
+      "actions": [
+        {
+          "name": "/kpschlotter%40gmail.com_dev_gb/actions/Bluemix_kps-cloudintroDb_newkey/create-document",
+          "type": "server",
+          "parameters": {
+            "doc": {
+              "date": "$date",
+              "time": "$time",
+              "number": "$number",
+              "locations": "$locations"
+            },
+            "dbname": "reservations"
+          },
+          "credentials": "$private.my_credentials",
+          "result_variable": "$my_result"
+        }
+      ],
+      "metadata": {
+        "fallback": "leave"
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "condition",
+        "dialog_node": "node_1_1553593259014"
+      },
+      "conditions": "#book_table",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_1_1543745967346",
+      "digress_out": "allow_all",
+      "previous_sibling": "node_7_1553843054883",
+      "digress_out_slots": "not_allowed"
+    },
+    {
+      "type": "standard",
+      "title": "Welcome",
+      "output": {
+        "text": {
+          "values": [
+            "Welcome to the CSAD Demo!"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "context": {
+        "private": {
+          "my_credentials": {
+            "api_key": "708d5c8e-bc04-42bb-a82b-234113d4bd8a:bltDOWKWtORMfRm04nimT9jTsHGtQ5N2ZvLsbqjAIHJ9T2cFJAE4XBnU8vI0EUGm"
+          }
+        },
+        "Alarmonoff": "off",
+        "app_action": ""
+      },
+      "metadata": {},
+      "conditions": "welcome",
+      "dialog_node": "Welcome"
+    }
+  ],
+  "workspace_id": "df807a4d-2dc0-4715-8f12-f10f5aa26693",
+  "counterexamples": [],
+  "learning_opt_out": false,
+  "status": "Available"
+}

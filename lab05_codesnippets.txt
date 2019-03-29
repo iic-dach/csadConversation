@@ -1,0 +1,124 @@
+******** Step 48 *****************
+intents[0].confidence>=0.94
+That question is out of scope for this application, take a look at the Conversation Enhanced application to handle questions like these.
+
+intents[0].confidence<0.94
+Sorry I haven't learned answers to questions like this.
+***********************************
+******** Step 51 *****************
+wget https://github.com/iic-dach/csadConversation/blob/master/resources/cardevice_entity.txt
+***********************************
+******** Step 55 username/passowrd version *****************
+var config = { 
+  watson: {
+    assistant: { 
+      username: "<yourServiceUsername>", 
+      password: "<yourServicePassword>", 
+      version: "2018-09-20",
+      url: "<yourServiceUrl>",
+      workspace_id: "<yourWorkspaceId>" 
+    },
+    discovery: {
+      version: "2018-10-15",
+      username: "<your discovery username>",
+      password: "<your discovery password>",
+      url: "<yourServiceUrl>"
+    },
+    discoveryEnv: {
+      collectionId: "<your collectionId>",
+      environmentId: "<your environmentId>"
+    } 
+  } 
+}; 
+module.exports = config;
+***********************************
+******** Step 55 apikey version *****************
+var config = { 
+  watson: {
+    assistant: { 
+      iam_apikey: "<yourApiKey>", 
+      version: "2018-09-20",
+      url: "<yourServiceUrl>",
+      workspace_id: "<yourWorkspaceId>" 
+    },
+    discovery: {
+      version: "2018-10-15",
+      iam_apikey: "<yourApiKey>",
+      url: "<yourServiceUrl>"
+    },
+    discoveryEnv: {
+      collectionId: "<your collectionId>",
+      environmentId: "<your environmentId>"
+    } 
+  } 
+}; 
+module.exports = config;
+***********************************
+******** Step 57 *****************
+const DiscoveryV1 = require('watson-developer-cloud/discovery/v1');
+***********************************
+******** Step 59 *****************
+const discovery = new DiscoveryV1(config.watson.discovery);
+***********************************
+******** Step 60 *****************
+//convert discovery.query() to Promise
+discoveryQuery = (params) => {
+  return new Promise((resolve, reject) => {
+    discovery.query(params, (error, result) => {
+      if (error) {
+        reject(error);
+      } else {
+        resolve(result)
+      }
+    })
+  })
+}
+***********************************
+******** Step 61 *****************
+assistantMessage(assistantParam)
+    .then(assistantResult => {
+      let intent = null;
+      let entity = null;
+
+      if (assistantResult.intents.length > 0) {
+        intent = assistantResult.intents[0];
+        console.log("Detected intent: " + intent.intent);
+        console.log("Confidence: " + intent.confidence);
+      }
+      if (assistantResult.entities.length > 0) {
+        entity = assistantResult.entities[0];
+        console.log("Detected entity: " + entity.entity);
+        console.log("Value: " + entity.value);
+      }
+      if (entity != null && (entity.entity === 'help') && (entity.value === 'time')) {
+        let msg = 'The current time is ' + new Date().toLocaleTimeString();
+        console.log(msg);
+        assistantResult.output.text = msg;
+      }
+      if (intent != null && intent.intent === "out_of_scope" && assistantResult.entities.indexOf("cardevice") >= -1) {
+        let discoveryParams = {
+          'query': assistantResult.input.text,
+          'environment_id': config.watson.discoveryEnv.environmentId,
+          'collection_id': config.watson.discoveryEnv.collectionId,
+          'passages': true,
+          return: 'text, title, sourceUrl, passages'
+        };
+        discoveryQuery(discoveryParams)
+          .then(discoveryResult => {
+            console.log(discoveryResult);
+            assistantResult.output.text = discoveryResult.passages[0].passage_text;
+            return res.json(assistantResult);
+          })
+          .catch(err => {
+            console.log('error:', err);
+          }); 
+      } else {
+//      console.log(JSON.stringify(result, null, 2)); 
+        res.json(assistantResult);
+      }
+    })
+    .catch(err => {
+      console.log('error:', err);
+    }); 
+}
+***********************************
