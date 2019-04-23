@@ -37,7 +37,7 @@ exports.postMessage = (req, res, next) => {
         console.log(msg);
         assistantResult.output.text = msg;
       }
-      if (intent != null && intent.intent === "out_of_scope" && assistantResult.entities.indexOf("cardevice") > -1) {
+      if (intent != null && intent.intent === "out_of_scope" && assistantResult.entities.filter(val => val.entity ==="cardevice").length > 0) {
         let discoveryParams = {
           'query': assistantResult.input.text,
           'environment_id': config.watson.discoveryEnv.environmentId,
