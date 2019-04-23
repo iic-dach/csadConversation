@@ -1,5 +1,5 @@
 applications:
-- name: csadConversation-xxx
+- name: xxx-csadConversation
   path: .
   buildpack: sdk-for-nodejs
   command: node app.js
