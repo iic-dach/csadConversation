@@ -2,80 +2,11 @@
   "name": "CSAD Demo",
   "intents": [
     {
-      "intent": "turn_on",
-      "examples": [
-        {
-          "text": "Arm the security system"
-        },
-        {
-          "text": "Lock the doors"
-        },
-        {
-          "text": "I need lights"
-        },
-        {
-          "text": "Turn on the lights"
-        },
-        {
-          "text": "Start recording"
-        },
-        {
-          "text": "headlights"
-        }
-      ],
-      "description": "Turn on"
-    },
-    {
-      "intent": "book_table",
-      "examples": [
-        {
-          "text": "I want to reserve a table for dinner"
-        },
-        {
-          "text": "Can 3 of us get a table for lunch?"
-        },
-        {
-          "text": "Do you have openings for next Wednesday at 7?"
-        },
-        {
-          "text": "Is there availability for 4 on Tuesday night?"
-        },
-        {
-          "text": "I'd like to come in for brunch tomorrow"
-        },
-        {
-          "text": "Can I reserve a table?"
-        },
-        {
-          "text": "I'd like to make a reservation"
-        }
-      ],
-      "description": "Book a table in one of the restaurants"
-    },
-    {
-      "intent": "hello",
-      "examples": [
-        {
-          "text": "Greetings"
-        },
-        {
-          "text": "Hi"
-        },
-        {
-          "text": "Hello"
-        },
-        {
-          "text": "Good morning"
-        },
-        {
-          "text": "Howdy"
-        }
-      ],
-      "description": "Greeting for app"
-    },
-    {
       "intent": "goodbye",
       "examples": [
+        {
+          "text": "Goodbye"
+        },
         {
           "text": "Bye"
         },
@@ -87,30 +18,99 @@
         },
         {
           "text": "Farewell"
-        },
-        {
-          "text": "Goodbye"
         }
       ],
       "description": "Goodbye"
     },
     {
+      "intent": "book_table",
+      "examples": [
+        {
+          "text": "I want to reserve a table for dinner"
+        },
+        {
+          "text": "I'd like to make a reservation"
+        },
+        {
+          "text": "Can I reserve a table?"
+        },
+        {
+          "text": "I'd like to come in for brunch tomorrow"
+        },
+        {
+          "text": "Is there availability for 4 on Tuesday night?"
+        },
+        {
+          "text": "Do you have openings for next Wednesday at 7?"
+        },
+        {
+          "text": "Can 3 of us get a table for lunch?"
+        }
+      ],
+      "description": "Book a table in one of the restaurants"
+    },
+    {
+      "intent": "hello",
+      "examples": [
+        {
+          "text": "Good morning"
+        },
+        {
+          "text": "Greetings"
+        },
+        {
+          "text": "Hi"
+        },
+        {
+          "text": "Hello"
+        },
+        {
+          "text": "Howdy"
+        }
+      ],
+      "description": "Greeting for app"
+    },
+    {
+      "intent": "turn_on",
+      "examples": [
+        {
+          "text": "headlights"
+        },
+        {
+          "text": "Start recording"
+        },
+        {
+          "text": "Turn on the lights"
+        },
+        {
+          "text": "I need lights"
+        },
+        {
+          "text": "Lock the doors"
+        },
+        {
+          "text": "Arm the security system"
+        }
+      ],
+      "description": "Turn on"
+    },
+    {
       "intent": "Help-Misc",
       "examples": [
         {
-          "text": "I have a problem"
-        },
-        {
-          "text": "I need help"
+          "text": "I need information"
         },
         {
           "text": "I have a request"
         },
         {
-          "text": "I need information"
+          "text": "I need help"
         },
         {
           "text": "I would like some assistance"
+        },
+        {
+          "text": "I have a problem"
         }
       ],
       "description": "Help"
@@ -118,11 +118,65 @@
   ],
   "entities": [
     {
+      "entity": "lights",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "low beam",
+          "synonyms": [
+            "headlights",
+            "passing lights",
+            "dim light"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "rear fog lamp",
+          "synonyms": [
+            "rear fog light"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "high beam",
+          "synonyms": [
+            "full beam",
+            "main beam",
+            "brights"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "fog lamp",
+          "synonyms": [
+            "fog light"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "help",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "time",
+          "synonyms": [
+            "clock",
+            "hour",
+            "minute",
+            "second"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
       "entity": "sys-date",
       "values": []
     },
     {
-      "entity": "sys-time",
+      "entity": "sys-number",
       "values": []
     },
     {
@@ -162,6 +216,10 @@
       "fuzzy_match": true
     },
     {
+      "entity": "sys-time",
+      "values": []
+    },
+    {
       "entity": "locations",
       "values": [
         {
@@ -181,108 +239,17 @@
         }
       ],
       "fuzzy_match": true
-    },
-    {
-      "entity": "sys-number",
-      "values": []
-    },
-    {
-      "entity": "help",
-      "values": [
-        {
-          "type": "synonyms",
-          "value": "time",
-          "synonyms": [
-            "clock",
-            "hour",
-            "minute",
-            "second"
-          ]
-        }
-      ],
-      "fuzzy_match": true
-    },
-    {
-      "entity": "lights",
-      "values": [
-        {
-          "type": "synonyms",
-          "value": "low beam",
-          "synonyms": [
-            "headlights",
-            "passing lights",
-            "dim light"
-          ]
-        },
-        {
-          "type": "synonyms",
-          "value": "high beam",
-          "synonyms": [
-            "full beam",
-            "main beam",
-            "brights"
-          ]
-        },
-        {
-          "type": "synonyms",
-          "value": "fog lamp",
-          "synonyms": [
-            "fog light"
-          ]
-        },
-        {
-          "type": "synonyms",
-          "value": "rear fog lamp",
-          "synonyms": [
-            "rear fog light"
-          ]
-        }
-      ],
-      "fuzzy_match": true
     }
   ],
   "language": "en",
   "metadata": {
     "api_version": {
       "major_version": "v1",
-      "minor_version": "2018-07-10"
+      "minor_version": "2018-09-20"
     }
   },
   "description": "",
   "dialog_nodes": [
-    {
-      "type": "standard",
-      "title": "Invalid light",
-      "output": {
-        "text": {
-          "values": [
-            "I'm sorry, I can only turn on some car related lights."
-          ],
-          "selection_policy": "sequential"
-        }
-      },
-      "parent": "node_4_1543324683575",
-      "metadata": {},
-      "conditions": "true",
-      "dialog_node": "node_6_1543325050049",
-      "previous_sibling": "node_5_1543324943176"
-    },
-    {
-      "type": "standard",
-      "title": "Light On",
-      "output": {
-        "text": {
-          "values": [
-            "OK! Turning on @lights light."
-          ],
-          "selection_policy": "sequential"
-        }
-      },
-      "parent": "node_4_1543324683575",
-      "metadata": {},
-      "conditions": "@lights",
-      "dialog_node": "node_5_1543324943176"
-    },
     {
       "type": "event_handler",
       "output": {
@@ -304,232 +271,6 @@
       "dialog_node": "handler_4_1543746258079"
     },
     {
-      "type": "event_handler",
-      "output": {
-        "text": {
-          "values": [
-            "I need some more information to continue. I will need the location, date, time, and number of people"
-          ],
-          "selection_policy": "sequential"
-        }
-      },
-      "parent": "node_1_1543745967346",
-      "metadata": {},
-      "event_name": "focus",
-      "dialog_node": "handler_2_1543746258055",
-      "previous_sibling": "node_1_1553593259014"
-    },
-    {
-      "type": "slot",
-      "parent": "node_1_1543745967346",
-      "variable": "$date",
-      "dialog_node": "slot_6_1543746650320",
-      "previous_sibling": "slot_3_1543746258079"
-    },
-    {
-      "type": "slot",
-      "parent": "node_1_1543745967346",
-      "variable": "$time",
-      "dialog_node": "slot_9_1543746710011",
-      "previous_sibling": "slot_6_1543746650320"
-    },
-    {
-      "type": "slot",
-      "parent": "node_1_1543745967346",
-      "variable": "$locations",
-      "dialog_node": "slot_3_1543746258079",
-      "previous_sibling": "handler_2_1543746258055"
-    },
-    {
-      "type": "slot",
-      "parent": "node_1_1543745967346",
-      "variable": "$number",
-      "dialog_node": "slot_12_1543746770664",
-      "previous_sibling": "slot_9_1543746710011"
-    },
-    {
-      "type": "standard",
-      "title": "respond to cloud",
-      "output": {
-        "generic": [
-          {
-            "time": 5000,
-            "typing": true,
-            "response_type": "pause"
-          },
-          {
-            "values": [
-              {
-                "text": "Great, I have a table of $number people, on $date at $time at our $locations store. ($my_result.id)"
-              }
-            ],
-            "response_type": "text",
-            "selection_policy": "sequential"
-          }
-        ]
-      },
-      "parent": "node_1_1543745967346",
-      "metadata": {},
-      "conditions": "true",
-      "dialog_node": "node_1_1553593259014"
-    },
-    {
-      "type": "event_handler",
-      "output": {
-        "text": "What day you want to come in?"
-      },
-      "parent": "slot_6_1543746650320",
-      "metadata": {},
-      "event_name": "focus",
-      "dialog_node": "handler_8_1543746650320",
-      "previous_sibling": "handler_7_1543746650320"
-    },
-    {
-      "type": "event_handler",
-      "parent": "slot_6_1543746650320",
-      "context": {
-        "date": "@sys-date"
-      },
-      "conditions": "@sys-date",
-      "event_name": "input",
-      "dialog_node": "handler_7_1543746650320"
-    },
-    {
-      "type": "standard",
-      "title": "Device On Off Check",
-      "output": {},
-      "parent": "node_7_1543325139789",
-      "metadata": {
-        "_customization": {
-          "mcr": true
-        }
-      },
-      "conditions": "true",
-      "dialog_node": "node_3_1553797280513",
-      "digress_out": "allow_all"
-    },
-    {
-      "type": "standard",
-      "title": "Additional Help",
-      "output": {
-        "text": {
-          "values": [
-            "I'm sorry, I can't help with that. For additional help, please call 555-2368."
-          ],
-          "selection_policy": "sequential"
-        }
-      },
-      "parent": "node_9_1543325539198",
-      "metadata": {},
-      "conditions": "true",
-      "dialog_node": "node_11_1543325647222",
-      "previous_sibling": "node_10_1543325600487"
-    },
-    {
-      "type": "standard",
-      "title": "Time",
-      "output": {
-        "text": {
-          "values": [],
-          "selection_policy": "sequential"
-        }
-      },
-      "parent": "node_9_1543325539198",
-      "metadata": {},
-      "conditions": "@help:time",
-      "dialog_node": "node_10_1543325600487"
-    },
-    {
-      "type": "response_condition",
-      "output": {
-        "text": {
-          "values": [
-            "I'll turn on the @device for you."
-          ],
-          "selection_policy": "sequential"
-        }
-      },
-      "parent": "node_3_1553797280513",
-      "context": {
-        "Alarmonoff": "on"
-      },
-      "metadata": {},
-      "conditions": "@device:(security system) && $app_action==\"on\"",
-      "dialog_node": "node_5_1553797691939",
-      "previous_sibling": "node_4_1553797350656"
-    },
-    {
-      "type": "response_condition",
-      "output": {
-        "text": {
-          "values": [
-            "I'll switch on the @device for you"
-          ],
-          "selection_policy": "sequential"
-        }
-      },
-      "parent": "node_3_1553797280513",
-      "metadata": {},
-      "conditions": "@device && $app_action==\"on\"",
-      "dialog_node": "node_6_1553797854374",
-      "previous_sibling": "node_5_1553797691939"
-    },
-    {
-      "type": "response_condition",
-      "output": {
-        "text": {
-          "values": [
-            "It looks like the @device is already on."
-          ],
-          "selection_policy": "sequential"
-        }
-      },
-      "parent": "node_3_1553797280513",
-      "metadata": {},
-      "conditions": "@device:(security system) && $app_action==\"on\" && $Alarmonoff==\"on\"",
-      "dialog_node": "node_4_1553797350656"
-    },
-    {
-      "type": "event_handler",
-      "output": {
-        "text": "How many people in your party?"
-      },
-      "parent": "slot_12_1543746770664",
-      "event_name": "focus",
-      "dialog_node": "handler_14_1543746770664",
-      "previous_sibling": "handler_13_1543746770664"
-    },
-    {
-      "type": "event_handler",
-      "parent": "slot_12_1543746770664",
-      "context": {
-        "number": "@sys-number"
-      },
-      "conditions": "@sys-number",
-      "event_name": "input",
-      "dialog_node": "handler_13_1543746770664"
-    },
-    {
-      "type": "standard",
-      "title": "Devices",
-      "output": {
-        "text": {
-          "values": [],
-          "selection_policy": "sequential"
-        }
-      },
-      "parent": "node_3_1543324638003",
-      "metadata": {},
-      "next_step": {
-        "behavior": "jump_to",
-        "selector": "condition",
-        "dialog_node": "node_3_1553797280513"
-      },
-      "conditions": "@device",
-      "dialog_node": "node_7_1543325139789",
-      "previous_sibling": "node_4_1543324683575"
-    },
-    {
       "type": "standard",
       "title": "Invalid device",
       "output": {
@@ -545,6 +286,26 @@
       "conditions": "true",
       "dialog_node": "node_8_1543325253024",
       "previous_sibling": "node_7_1543325139789"
+    },
+    {
+      "type": "standard",
+      "title": "Devices",
+      "output": {
+        "text": {
+          "values": [],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_3_1543324638003",
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "condition",
+        "dialog_node": "node_7_1557733698080"
+      },
+      "conditions": "@device",
+      "dialog_node": "node_7_1543325139789",
+      "previous_sibling": "node_4_1543324683575"
     },
     {
       "type": "standard",
@@ -584,6 +345,302 @@
     },
     {
       "type": "standard",
+      "title": "Additional Help",
+      "output": {
+        "text": {
+          "values": [
+            "I'm sorry, I can't help with that. For additional help, please call 555-2368."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_9_1543325539198",
+      "metadata": {},
+      "conditions": "true",
+      "dialog_node": "node_11_1543325647222",
+      "previous_sibling": "node_10_1543325600487"
+    },
+    {
+      "type": "standard",
+      "title": "Time",
+      "output": {
+        "text": {
+          "values": [
+            "Will be replaced with the time by nodejs task!"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_9_1543325539198",
+      "metadata": {},
+      "conditions": "@help:time",
+      "dialog_node": "node_10_1543325600487"
+    },
+    {
+      "type": "response_condition",
+      "title": "response_1_1557734069220",
+      "output": {
+        "text": {
+          "values": [
+            "I'll switch on the @device for you."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_7_1557733698080",
+      "conditions": "@device && $app_action==\"on\"",
+      "dialog_node": "response_1_1557734069220",
+      "previous_sibling": "response_9_1557733927350"
+    },
+    {
+      "type": "response_condition",
+      "title": "response_9_1557733927350",
+      "output": {
+        "text": {
+          "values": [
+            "I'll turn on the @device for you."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_7_1557733698080",
+      "context": {
+        "Alarmonoff": "on"
+      },
+      "conditions": "@device:(security system) && $app_action==\"on\"",
+      "dialog_node": "response_9_1557733927350",
+      "previous_sibling": "response_6_1557733763526"
+    },
+    {
+      "type": "response_condition",
+      "title": "response_6_1557733763526",
+      "output": {
+        "text": {
+          "values": [
+            "It looks like the @device is already on."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_7_1557733698080",
+      "conditions": "@device:(security system) &&  $app_action==\"on\" && $Alarmonoff==\"on\"",
+      "dialog_node": "response_6_1557733763526"
+    },
+    {
+      "type": "slot",
+      "parent": "node_1_1543745967346",
+      "variable": "$date",
+      "dialog_node": "slot_6_1543746650320",
+      "previous_sibling": "slot_3_1543746258079"
+    },
+    {
+      "type": "slot",
+      "parent": "node_1_1543745967346",
+      "variable": "$number",
+      "dialog_node": "slot_12_1543746770664",
+      "previous_sibling": "slot_9_1543746710011"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "I need some more information to continue. I will need the location, date, time, and number of people"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_1_1543745967346",
+      "metadata": {},
+      "event_name": "focus",
+      "dialog_node": "handler_2_1543746258055",
+      "previous_sibling": "node_1_1553593259014"
+    },
+    {
+      "type": "slot",
+      "parent": "node_1_1543745967346",
+      "variable": "$time",
+      "dialog_node": "slot_9_1543746710011",
+      "previous_sibling": "slot_6_1543746650320"
+    },
+    {
+      "type": "slot",
+      "parent": "node_1_1543745967346",
+      "variable": "$locations",
+      "dialog_node": "slot_3_1543746258079",
+      "previous_sibling": "handler_2_1543746258055"
+    },
+    {
+      "type": "standard",
+      "title": "respond to cloud",
+      "output": {
+        "generic": [
+          {
+            "time": 5000,
+            "typing": true,
+            "response_type": "pause"
+          },
+          {
+            "values": [
+              {
+                "text": "Great, I have a table of $number people, on $date at $time at our $locations store.($my_result)"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_1_1543745967346",
+      "metadata": {},
+      "conditions": "true",
+      "dialog_node": "node_1_1553593259014"
+    },
+    {
+      "type": "standard",
+      "title": "Device On Off Check",
+      "parent": "node_7_1543325139789",
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "conditions": "true",
+      "dialog_node": "node_7_1557733698080"
+    },
+    {
+      "type": "standard",
+      "title": "Invalid light",
+      "output": {
+        "text": {
+          "values": [
+            "I'm sorry, I can only turn on some car related lights."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_4_1543324683575",
+      "metadata": {},
+      "conditions": "true",
+      "dialog_node": "node_6_1543325050049",
+      "previous_sibling": "node_5_1543324943176"
+    },
+    {
+      "type": "standard",
+      "title": "Light On",
+      "output": {
+        "text": {
+          "values": [
+            "OK! Turning on @lights light."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_4_1543324683575",
+      "metadata": {},
+      "conditions": "@lights",
+      "dialog_node": "node_5_1543324943176"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": "What day you want to come in?"
+      },
+      "parent": "slot_6_1543746650320",
+      "metadata": {},
+      "event_name": "focus",
+      "dialog_node": "handler_8_1543746650320",
+      "previous_sibling": "handler_7_1543746650320"
+    },
+    {
+      "type": "event_handler",
+      "parent": "slot_6_1543746650320",
+      "context": {
+        "date": "@sys-date"
+      },
+      "conditions": "@sys-date",
+      "event_name": "input",
+      "dialog_node": "handler_7_1543746650320"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": "How many people in your party?"
+      },
+      "parent": "slot_12_1543746770664",
+      "event_name": "focus",
+      "dialog_node": "handler_14_1543746770664",
+      "previous_sibling": "handler_13_1543746770664"
+    },
+    {
+      "type": "event_handler",
+      "parent": "slot_12_1543746770664",
+      "context": {
+        "number": "@sys-number"
+      },
+      "conditions": "@sys-number",
+      "event_name": "input",
+      "dialog_node": "handler_13_1543746770664"
+    },
+    {
+      "type": "frame",
+      "title": "Book a table",
+      "output": {
+        "text": {
+          "values": [],
+          "selection_policy": "sequential"
+        }
+      },
+      "actions": [
+        {
+          "name": "kps%4xxxxxxxxxxxxxxxxxxxxxxxxxons/Bluemix_cfworkshopdb_workshopkey/create-document",
+          "type": "server",
+          "parameters": {
+            "doc": {
+              "date": "$date",
+              "time": "$time",
+              "number": "$number",
+              "locations": "$locations"
+            },
+            "dbname": "reservations"
+          },
+          "credentials": "$my_creds",
+          "result_variable": "$my_result"
+        }
+      ],
+      "metadata": {
+        "fallback": "leave"
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "condition",
+        "dialog_node": "node_1_1553593259014"
+      },
+      "conditions": "#book_table",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_1_1543745967346",
+      "digress_out": "allow_all",
+      "previous_sibling": "node_3_1543324638003",
+      "digress_out_slots": "not_allowed"
+    },
+    {
+      "type": "standard",
+      "title": "Goodbye",
+      "output": {
+        "text": {
+          "values": [
+            "Until our next meeting!"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "metadata": {},
+      "conditions": "#goodbye",
+      "dialog_node": "node_2_1543324518878",
+      "previous_sibling": "node_9_1543325539198"
+    },
+    {
+      "type": "standard",
       "title": "Help",
       "output": {
         "text": {
@@ -602,38 +659,6 @@
       "conditions": "#Help-Misc",
       "dialog_node": "node_9_1543325539198",
       "previous_sibling": "node_1_1543745967346"
-    },
-    {
-      "type": "standard",
-      "title": "Hello",
-      "output": {
-        "text": {
-          "values": [
-            "Hi! What can I do for you?"
-          ],
-          "selection_policy": "sequential"
-        }
-      },
-      "metadata": {},
-      "conditions": "#hello",
-      "dialog_node": "node_1_1543324451180",
-      "previous_sibling": "Welcome"
-    },
-    {
-      "type": "standard",
-      "title": "Goodbye",
-      "output": {
-        "text": {
-          "values": [
-            "Until our next meeting!"
-          ],
-          "selection_policy": "sequential"
-        }
-      },
-      "metadata": {},
-      "conditions": "#goodbye",
-      "dialog_node": "node_2_1543324518878",
-      "previous_sibling": "node_9_1543325539198"
     },
     {
       "type": "standard",
@@ -676,45 +701,20 @@
       "previous_sibling": "node_1_1543324451180"
     },
     {
-      "type": "frame",
-      "title": "Book a table",
+      "type": "standard",
+      "title": "Hello",
       "output": {
         "text": {
-          "values": [],
+          "values": [
+            "Hi! What can I do for you?"
+          ],
           "selection_policy": "sequential"
         }
       },
-      "actions": [
-        {
-          "name": "/kpschlotter%40gmail.com_dev_gb/actions/Bluemix_kps-cloudintroDb_newkey/create-document",
-          "type": "server",
-          "parameters": {
-            "doc": {
-              "date": "$date",
-              "time": "$time",
-              "number": "$number",
-              "locations": "$locations"
-            },
-            "dbname": "reservations"
-          },
-          "credentials": "$private.my_credentials",
-          "result_variable": "$my_result"
-        }
-      ],
-      "metadata": {
-        "fallback": "leave"
-      },
-      "next_step": {
-        "behavior": "jump_to",
-        "selector": "condition",
-        "dialog_node": "node_1_1553593259014"
-      },
-      "conditions": "#book_table",
-      "digress_in": "does_not_return",
-      "dialog_node": "node_1_1543745967346",
-      "digress_out": "allow_all",
-      "previous_sibling": "node_3_1543324638003",
-      "digress_out_slots": "not_allowed"
+      "metadata": {},
+      "conditions": "#hello",
+      "dialog_node": "node_1_1543324451180",
+      "previous_sibling": "Welcome"
     },
     {
       "type": "standard",
@@ -730,7 +730,7 @@
       "context": {
         "private": {
           "my_credentials": {
-            "api_key": "708d5c8e-bc04-42bb-a82b-234113d4bd8a:bltDOWKWtORMfRm04nimT9jTsHGtQ5N2ZvLsbqjAIHJ9T2cFJAE4XBnU8vI0EUGm"
+            "api_key": "6ffd7aff-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxAphT3ifB1gKPIQvQ"
           }
         },
         "Alarmonoff": "off",
@@ -741,8 +741,11 @@
       "dialog_node": "Welcome"
     }
   ],
-  "workspace_id": "df807a4d-2dc0-4715-8f12-f10f5aa26693",
+  "workspace_id": "c37fc40d-0e94-4af3-9703-6f3e956f6871",
   "counterexamples": [],
+  "system_settings": {
+    "spelling_auto_correct": true
+  },
   "learning_opt_out": false,
-  "status": "Available"
+  "status": "Training"
 }
