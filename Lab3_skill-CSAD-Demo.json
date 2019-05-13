@@ -593,7 +593,7 @@
       },
       "actions": [
         {
-          "name": "kps%40de.ibm.com_us-south_WatsonDataPlatform/actions/Bluemix_cfworkshopdb_workshopkey/create-document",
+          "name": "kps%4xxxxxxxxxxxxxxxxxxxxxxxxxons/Bluemix_cfworkshopdb_workshopkey/create-document",
           "type": "server",
           "parameters": {
             "doc": {
@@ -728,6 +728,11 @@
         }
       },
       "context": {
+        "private": {
+          "my_credentials": {
+            "api_key": "6ffd7aff-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxAphT3ifB1gKPIQvQ"
+          }
+        },
         "Alarmonoff": "off",
         "app_action": ""
       },
