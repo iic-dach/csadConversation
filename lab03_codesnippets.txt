@@ -1,4 +1,4 @@
-******** Step 80 username/passowrd version *****************
+******** Step 83 username/passowrd version *****************
 {
   "context": {
     "private": {
@@ -17,7 +17,7 @@
   }
 }
 ***********************************
-******** Step 83 username/passowrd version *****************
+******** Step 86 username/passowrd version *****************
 {
   "output": {
     "text": {
@@ -44,13 +44,13 @@
   ]
 }
 ***********************************
-******** Step 91 username/passowrd version *****************
+******** Step 94 username/passowrd version *****************
 https://<host of your service>/assistant/api/v1/workspaces?version=2019-02-28
 ***********************************
-******** Step 93 username/passowrd version *****************
+******** Step 96 username/passowrd version *****************
 https://<host of your service>/assistant/api/v1/workspaces/<YOUR workspaceid from Step18>?version=2019-02-28
 ***********************************
-******** Step 94 username/passowrd version *****************
+******** Step 97 username/passowrd version *****************
 https://<host of your service>/assistant/api/v1/workspaces/<YOUR workspaceid from Step19>/message?version=2019-02-28
 
 {"input": 
@@ -65,7 +65,7 @@ https://<host of your service>/assistant/api/v1/workspaces/<YOUR workspaceid fro
     }
 }
 ***********************************
-******** Step 95 username/passowrd version *****************
+******** Step 98 username/passowrd version *****************
 {"input": 
     {"text": "turn on the lights"},
     "context": {
@@ -91,7 +91,7 @@ https://<host of your service>/assistant/api/v1/workspaces/<YOUR workspaceid fro
 
 https://<your service host>/assistant/api/v1/workspaces/<your workspaceid>/dialog_nodes?version=2019-02-28
 ***********************************
-******** Step 99 username/passowrd version *****************
+******** Step 101 username/passowrd version *****************
 {
   "name": "csadconversation",
   "version": "1.0.0",
@@ -105,7 +105,7 @@ https://<your service host>/assistant/api/v1/workspaces/<your workspaceid>/dialo
   "license": "ISC"
 }
 ***********************************
-******** Step 101 username/passowrd version *****************
+******** Step 104 username/passowrd version *****************
 npm install --save express ejs morgan body-parser watson-developer-cloud
 ***********************************
 ******** Step 102 username/passowrd version *****************
@@ -122,7 +122,7 @@ var config = {
 }; 
 module.exports = config;
 ***********************************
-******** Step 102 apikey version *****************
+******** Step 105 apikey version *****************
 var config = { 
   watson: {
     assistant: { 
@@ -135,7 +135,7 @@ var config = {
 }; 
 module.exports = config;
 ***********************************
-******** Step 104 *****************
+******** Step 107 *****************
 const path = require('path');
 
 const express = require('express');
@@ -162,7 +162,7 @@ app.listen(port, () => {
   console.log('Express app started on port ' + port);
 })
 ***********************************
-******** Step 105 *****************
+******** Step 108 *****************
 const express = require('express');
 
 const watsonController = require('../controllers/watson');
@@ -175,7 +175,7 @@ router.post('/', watsonController.postMessage);
 
 module.exports = router;
 ***********************************
-******** Step 106 *****************
+******** Step 109 *****************
 const AssistantV1 = require('watson-developer-cloud/assistant/v1');
 const config = require('../config');
 
@@ -216,7 +216,7 @@ assistantMessage = (params) => {
   });
 }
 ***********************************
-******** Step 108 *****************
+******** Step 111 *****************
 <!DOCTYPE html>
 <html>
   <head>
@@ -231,17 +231,17 @@ assistantMessage = (params) => {
     <div class="container" style="text-align: center"><body class="container">
       <div class="row"><div class="col-md-12"><p><h2>IBM EAG Watson Assistant Lab</h2></p></div></div>
 ***********************************
-******** Step 109 *****************
+******** Step 112 *****************
     <p><small>IBM Ecosystem Advocacy Group – 2019</small></p>
   </body>
 </html>
 ***********************************
-******** Step 110 *****************
+******** Step 113 *****************
 <% include header %>
 <h2>404! Page not found.</h2>
 <% include footer %>
 ***********************************
-******** Step 111 *****************
+******** Step 114 *****************
 <% include header %>
 <p/>
 <div class="row">
@@ -262,7 +262,7 @@ assistantMessage = (params) => {
 </div>
 <% include footer %>
 ***********************************
-******** Step 114 *****************
+******** Step 117 *****************
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -276,7 +276,7 @@ a {
   margin-right: 5px;
 }
 ***********************************
-******** Step 115 *****************
+******** Step 118 *****************
 var context = {};
 
 function updateChatLog(user, message) {
@@ -326,7 +326,7 @@ function init() {
   sendMessage(); 
 } 
 ***********************************
-******** Step 128 username/passowrd version *****************
+******** Step 131 username/passowrd version *****************
       if (!response.input.text) {
         return res.json(response);
       }
@@ -347,7 +347,7 @@ function init() {
         }
       }
 ***********************************
-******** Step 137 username/passowrd version *****************
+******** Step 140 username/passowrd version *****************
 applications:
 - name: csadConversation-xxx
   path: .
