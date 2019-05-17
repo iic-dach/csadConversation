@@ -2,38 +2,50 @@
   "name": "CSAD Demo",
   "intents": [
     {
-      "intent": "goodbye",
+      "intent": "hello",
       "examples": [
         {
-          "text": "Bye"
+          "text": "Hello"
         },
         {
-          "text": "See you later"
+          "text": "Good morning"
         },
         {
-          "text": "I am leaving"
+          "text": "Howdy"
         },
         {
-          "text": "Farewell"
+          "text": "Greetings"
         },
         {
-          "text": "Goodbye"
+          "text": "Hi"
         }
       ],
-      "description": "Goodbye"
+      "description": "Greeting for app"
+    },
+    {
+      "intent": "Help-Misc",
+      "examples": [
+        {
+          "text": "I would like some assistance"
+        },
+        {
+          "text": "I have a problem"
+        },
+        {
+          "text": "I need help"
+        },
+        {
+          "text": "I have a request"
+        },
+        {
+          "text": "I need information"
+        }
+      ],
+      "description": "Help"
     },
     {
       "intent": "book_table",
       "examples": [
-        {
-          "text": "Can I reserve a table?"
-        },
-        {
-          "text": "I want to reserve a table for dinner"
-        },
-        {
-          "text": "Can 3 of us get a table for lunch?"
-        },
         {
           "text": "Do you have openings for next Wednesday at 7?"
         },
@@ -45,43 +57,43 @@
         },
         {
           "text": "I'd like to come in for brunch tomorrow"
+        },
+        {
+          "text": "Can I reserve a table?"
+        },
+        {
+          "text": "I want to reserve a table for dinner"
+        },
+        {
+          "text": "Can 3 of us get a table for lunch?"
         }
       ],
       "description": "Book a table in one of the restaurants"
     },
     {
-      "intent": "hello",
+      "intent": "goodbye",
       "examples": [
         {
-          "text": "Hello"
+          "text": "See you later"
         },
         {
-          "text": "Hi"
+          "text": "Bye"
         },
         {
-          "text": "Greetings"
+          "text": "Goodbye"
         },
         {
-          "text": "Howdy"
+          "text": "Farewell"
         },
         {
-          "text": "Good morning"
+          "text": "I am leaving"
         }
       ],
-      "description": "Greeting for app"
+      "description": "Goodbye"
     },
     {
       "intent": "turn_on",
       "examples": [
-        {
-          "text": "I need lights"
-        },
-        {
-          "text": "Lock the doors"
-        },
-        {
-          "text": "Turn on the lights"
-        },
         {
           "text": "Start recording"
         },
@@ -90,6 +102,15 @@
         },
         {
           "text": "Arm the security system"
+        },
+        {
+          "text": "I need lights"
+        },
+        {
+          "text": "Lock the doors"
+        },
+        {
+          "text": "Turn on the lights"
         }
       ],
       "description": "Turn on"
@@ -97,87 +118,6 @@
     {
       "intent": "out_of_scope",
       "examples": [
-        {
-          "text": "how do i disable the vehicle stability control"
-        },
-        {
-          "text": "how do i clean the vehicle"
-        },
-        {
-          "text": "how do i close the window"
-        },
-        {
-          "text": "how do i connect my phone"
-        },
-        {
-          "text": "how do i connect USB device"
-        },
-        {
-          "text": "how do i control a phone"
-        },
-        {
-          "text": "light bulbs replacement"
-        },
-        {
-          "text": "how do i find the fuel consumption"
-        },
-        {
-          "text": "how do i lock the window"
-        },
-        {
-          "text": "how do i lock the windows"
-        },
-        {
-          "text": "how do i lock the windows to prevent children from opening"
-        },
-        {
-          "text": "how do i open the doors"
-        },
-        {
-          "text": "how do i open the fuel filler flap"
-        },
-        {
-          "text": "how do i open the power windows"
-        },
-        {
-          "text": "how do i open the rear window"
-        },
-        {
-          "text": "how do i open the side window"
-        },
-        {
-          "text": "how do i open the tank fuel"
-        },
-        {
-          "text": "how do i open the window"
-        },
-        {
-          "text": "How do I pair my android phone to the radio"
-        },
-        {
-          "text": "How do I pair my iPhone to the radio"
-        },
-        {
-          "text": "how do i pause song in my iPod"
-        },
-        {
-          "text": "how do i play an iPod"
-        },
-        {
-          "text": "how do i play the track on the iPod"
-        },
-        {
-          "text": "how do i refill the engine oil"
-        },
-        {
-          "text": "how to change the oil"
-        },
-        {
-          "text": "how do i turn on headlamps"
-        },
-        {
-          "text": "how do i turn on front seat heating"
-        },
         {
           "text": "how do i turn on cruise control"
         },
@@ -446,9 +386,6 @@
           "text": "how often should i change the oil"
         },
         {
-          "text": "how to adjust the vehicle to vehicle distance"
-        },
-        {
           "text": "how to change engine oil"
         },
         {
@@ -489,94 +426,95 @@
         },
         {
           "text": "how do i change the oil"
+        },
+        {
+          "text": "how to adjust the vehicle to vehicle distance"
+        },
+        {
+          "text": "how do i disable the vehicle stability control"
+        },
+        {
+          "text": "how do i clean the vehicle"
+        },
+        {
+          "text": "how do i close the window"
+        },
+        {
+          "text": "how do i connect my phone"
+        },
+        {
+          "text": "how do i connect USB device"
+        },
+        {
+          "text": "how do i control a phone"
+        },
+        {
+          "text": "light bulbs replacement"
+        },
+        {
+          "text": "how do i find the fuel consumption"
+        },
+        {
+          "text": "how do i lock the window"
+        },
+        {
+          "text": "how do i lock the windows"
+        },
+        {
+          "text": "how do i lock the windows to prevent children from opening"
+        },
+        {
+          "text": "how do i open the doors"
+        },
+        {
+          "text": "how do i open the fuel filler flap"
+        },
+        {
+          "text": "how do i open the power windows"
+        },
+        {
+          "text": "how do i open the rear window"
+        },
+        {
+          "text": "how do i open the side window"
+        },
+        {
+          "text": "how do i open the tank fuel"
+        },
+        {
+          "text": "how do i open the window"
+        },
+        {
+          "text": "How do I pair my android phone to the radio"
+        },
+        {
+          "text": "How do I pair my iPhone to the radio"
+        },
+        {
+          "text": "how do i pause song in my iPod"
+        },
+        {
+          "text": "how do i play an iPod"
+        },
+        {
+          "text": "how do i play the track on the iPod"
+        },
+        {
+          "text": "how do i refill the engine oil"
+        },
+        {
+          "text": "how to change the oil"
+        },
+        {
+          "text": "how do i turn on headlamps"
+        },
+        {
+          "text": "how do i turn on front seat heating"
         }
       ]
-    },
-    {
-      "intent": "Help-Misc",
-      "examples": [
-        {
-          "text": "I have a problem"
-        },
-        {
-          "text": "I need help"
-        },
-        {
-          "text": "I have a request"
-        },
-        {
-          "text": "I need information"
-        },
-        {
-          "text": "I would like some assistance"
-        }
-      ],
-      "description": "Help"
     }
   ],
   "entities": [
-    {
-      "entity": "lights",
-      "values": [
-        {
-          "type": "synonyms",
-          "value": "high beam",
-          "synonyms": [
-            "full beam",
-            "main beam",
-            "brights"
-          ]
-        },
-        {
-          "type": "synonyms",
-          "value": "fog lamp",
-          "synonyms": [
-            "fog light"
-          ]
-        },
-        {
-          "type": "synonyms",
-          "value": "low beam",
-          "synonyms": [
-            "headlights",
-            "passing lights",
-            "dim light"
-          ]
-        },
-        {
-          "type": "synonyms",
-          "value": "rear fog lamp",
-          "synonyms": [
-            "rear fog light"
-          ]
-        }
-      ],
-      "fuzzy_match": true
-    },
-    {
-      "entity": "help",
-      "values": [
-        {
-          "type": "synonyms",
-          "value": "time",
-          "synonyms": [
-            "clock",
-            "hour",
-            "minute",
-            "second"
-          ]
-        }
-      ],
-      "fuzzy_match": true
-    },
-    {
-      "entity": "sys-date",
-      "values": []
-    },
-    {
-      "entity": "sys-number",
-      "values": []
-    },
     {
       "entity": "device",
       "values": [
@@ -590,10 +528,9 @@
         },
         {
           "type": "synonyms",
-          "value": "lights",
+          "value": "security system",
           "synonyms": [
-            "bulb",
-            "lamp"
+            "alarm"
           ]
         },
         {
@@ -605,9 +542,10 @@
         },
         {
           "type": "synonyms",
-          "value": "security system",
+          "value": "lights",
           "synonyms": [
-            "alarm"
+            "bulb",
+            "lamp"
           ]
         }
       ],
@@ -618,29 +556,67 @@
       "values": []
     },
     {
-      "entity": "locations",
+      "entity": "cardevice",
       "values": [
         {
           "type": "synonyms",
-          "value": "First Street",
+          "value": "vehicle distance",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "fuel",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "fuel tank flap",
           "synonyms": [
-            "first",
-            "1st"
+            "fuel filler flap"
           ]
         },
         {
           "type": "synonyms",
-          "value": "Main Street",
+          "value": "head restraint",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "rear view mirror",
           "synonyms": [
-            "Main"
+            "exterior mirrors",
+            "mirror inside"
           ]
-        }
-      ],
-      "fuzzy_match": true
-    },
-    {
-      "entity": "cardevice",
-      "values": [
+        },
+        {
+          "type": "synonyms",
+          "value": "alarm",
+          "synonyms": [
+            "car alarm"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "electric power steering",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "blind spot monitor",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "windscreen washer",
+          "synonyms": [
+            "washer fluid"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "traffic info",
+          "synonyms": []
+        },
         {
           "type": "synonyms",
           "value": "pre collision system",
@@ -768,78 +744,147 @@
           "synonyms": [
             "coolant"
           ]
-        },
-        {
-          "type": "synonyms",
-          "value": "fuel",
-          "synonyms": []
-        },
-        {
-          "type": "synonyms",
-          "value": "fuel tank flap",
-          "synonyms": [
-            "fuel filler flap"
-          ]
-        },
-        {
-          "type": "synonyms",
-          "value": "head restraint",
-          "synonyms": []
-        },
-        {
-          "type": "synonyms",
-          "value": "rear view mirror",
-          "synonyms": [
-            "exterior mirrors",
-            "mirror inside"
-          ]
-        },
-        {
-          "type": "synonyms",
-          "value": "alarm",
-          "synonyms": [
-            "car alarm"
-          ]
-        },
-        {
-          "type": "synonyms",
-          "value": "electric power steering",
-          "synonyms": []
-        },
-        {
-          "type": "synonyms",
-          "value": "blind spot monitor",
-          "synonyms": []
-        },
-        {
-          "type": "synonyms",
-          "value": "windscreen washer",
-          "synonyms": [
-            "washer fluid"
-          ]
-        },
-        {
-          "type": "synonyms",
-          "value": "traffic info",
-          "synonyms": []
-        },
-        {
-          "type": "synonyms",
-          "value": "vehicle distance",
-          "synonyms": []
         }
       ]
+    },
+    {
+      "entity": "locations",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "First Street",
+          "synonyms": [
+            "first",
+            "1st"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Main Street",
+          "synonyms": [
+            "Main"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "lights",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "low beam",
+          "synonyms": [
+            "headlights",
+            "passing lights",
+            "dim light"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "fog lamp",
+          "synonyms": [
+            "fog light"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "high beam",
+          "synonyms": [
+            "full beam",
+            "main beam",
+            "brights"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "rear fog lamp",
+          "synonyms": [
+            "rear fog light"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "sys-date",
+      "values": []
+    },
+    {
+      "entity": "sys-number",
+      "values": []
+    },
+    {
+      "entity": "help",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "time",
+          "synonyms": [
+            "clock",
+            "hour",
+            "minute",
+            "second"
+          ]
+        }
+      ],
+      "fuzzy_match": true
     }
   ],
   "language": "en",
   "metadata": {
     "api_version": {
       "major_version": "v1",
-      "minor_version": "2018-09-20"
+      "minor_version": "2018-07-10"
     }
   },
   "description": "",
   "dialog_nodes": [
+    {
+      "type": "response_condition",
+      "output": {
+        "text": {
+          "values": [
+            "Sorry I haven't learned answers to questions like this."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_2_1554976126838",
+      "metadata": {},
+      "conditions": "true",
+      "dialog_node": "node_4_1554976216336",
+      "previous_sibling": "node_3_1554976189000"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "text": {
+          "values": [
+            "That question is out of scope for this application, take a look at the Conversation Enhanced application to handle questions like these."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_2_1554976126838",
+      "metadata": {},
+      "conditions": "@cardevice",
+      "dialog_node": "node_3_1554976189000"
+    },
+    {
+      "type": "standard",
+      "title": "Check out of Scope",
+      "output": {},
+      "parent": "node_1_1554976046756",
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "conditions": "true",
+      "dialog_node": "node_2_1554976126838",
+      "digress_out": "allow_all"
+    },
     {
       "type": "event_handler",
       "output": {
@@ -859,6 +904,27 @@
       "conditions": "@locations",
       "event_name": "input",
       "dialog_node": "handler_4_1543746258079"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": "What day you want to come in?"
+      },
+      "parent": "slot_6_1543746650320",
+      "metadata": {},
+      "event_name": "focus",
+      "dialog_node": "handler_8_1543746650320",
+      "previous_sibling": "handler_7_1543746650320"
+    },
+    {
+      "type": "event_handler",
+      "parent": "slot_6_1543746650320",
+      "context": {
+        "date": "@sys-date"
+      },
+      "conditions": "@sys-date",
+      "event_name": "input",
+      "dialog_node": "handler_7_1543746650320"
     },
     {
       "type": "standard",
@@ -914,57 +980,16 @@
       "dialog_node": "node_4_1543324683575"
     },
     {
-      "type": "event_handler",
-      "output": {
-        "text": "What time did you want to arrive?"
-      },
-      "parent": "slot_9_1543746710011",
-      "event_name": "focus",
-      "dialog_node": "handler_11_1543746710011",
-      "previous_sibling": "handler_10_1543746710011"
-    },
-    {
-      "type": "event_handler",
-      "parent": "slot_9_1543746710011",
-      "context": {
-        "time": "@sys-time"
-      },
-      "conditions": "@sys-time",
-      "event_name": "input",
-      "dialog_node": "handler_10_1543746710011"
-    },
-    {
       "type": "standard",
-      "title": "Additional Help",
-      "output": {
-        "text": {
-          "values": [
-            "I'm sorry, I can't help with that. For additional help, please call 555-2368."
-          ],
-          "selection_policy": "sequential"
+      "title": "Device On Off Check",
+      "parent": "node_7_1543325139789",
+      "metadata": {
+        "_customization": {
+          "mcr": true
         }
       },
-      "parent": "node_9_1543325539198",
-      "metadata": {},
       "conditions": "true",
-      "dialog_node": "node_11_1543325647222",
-      "previous_sibling": "node_10_1543325600487"
-    },
-    {
-      "type": "standard",
-      "title": "Time",
-      "output": {
-        "text": {
-          "values": [
-            "Will be replaced with the time by nodejs task!"
-          ],
-          "selection_policy": "sequential"
-        }
-      },
-      "parent": "node_9_1543325539198",
-      "metadata": {},
-      "conditions": "@help:time",
-      "dialog_node": "node_10_1543325600487"
+      "dialog_node": "node_7_1557733698080"
     },
     {
       "type": "response_condition",
@@ -1017,6 +1042,59 @@
       "dialog_node": "response_6_1557733763526"
     },
     {
+      "type": "standard",
+      "title": "Invalid light",
+      "output": {
+        "text": {
+          "values": [
+            "I'm sorry, I can only turn on some car related lights."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_4_1543324683575",
+      "metadata": {},
+      "conditions": "true",
+      "dialog_node": "node_6_1543325050049",
+      "previous_sibling": "node_5_1543324943176"
+    },
+    {
+      "type": "standard",
+      "title": "Light On",
+      "output": {
+        "text": {
+          "values": [
+            "OK! Turning on @lights light."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_4_1543324683575",
+      "metadata": {},
+      "conditions": "@lights",
+      "dialog_node": "node_5_1543324943176"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": "What time did you want to arrive?"
+      },
+      "parent": "slot_9_1543746710011",
+      "event_name": "focus",
+      "dialog_node": "handler_11_1543746710011",
+      "previous_sibling": "handler_10_1543746710011"
+    },
+    {
+      "type": "event_handler",
+      "parent": "slot_9_1543746710011",
+      "context": {
+        "time": "@sys-time"
+      },
+      "conditions": "@sys-time",
+      "event_name": "input",
+      "dialog_node": "handler_10_1543746710011"
+    },
+    {
       "type": "slot",
       "parent": "node_1_1543745967346",
       "variable": "$date",
@@ -1026,9 +1104,9 @@
     {
       "type": "slot",
       "parent": "node_1_1543745967346",
-      "variable": "$number",
-      "dialog_node": "slot_12_1543746770664",
-      "previous_sibling": "slot_9_1543746710011"
+      "variable": "$time",
+      "dialog_node": "slot_9_1543746710011",
+      "previous_sibling": "slot_6_1543746650320"
     },
     {
       "type": "event_handler",
@@ -1049,9 +1127,9 @@
     {
       "type": "slot",
       "parent": "node_1_1543745967346",
-      "variable": "$time",
-      "dialog_node": "slot_9_1543746710011",
-      "previous_sibling": "slot_6_1543746650320"
+      "variable": "$number",
+      "dialog_node": "slot_12_1543746770664",
+      "previous_sibling": "slot_9_1543746710011"
     },
     {
       "type": "slot",
@@ -1088,114 +1166,36 @@
     },
     {
       "type": "standard",
-      "title": "Device On Off Check",
-      "parent": "node_7_1543325139789",
-      "metadata": {
-        "_customization": {
-          "mcr": true
+      "title": "Additional Help",
+      "output": {
+        "text": {
+          "values": [
+            "I'm sorry, I can't help with that. For additional help, please call 555-2368."
+          ],
+          "selection_policy": "sequential"
         }
       },
+      "parent": "node_9_1543325539198",
+      "metadata": {},
       "conditions": "true",
-      "dialog_node": "node_7_1557733698080"
+      "dialog_node": "node_11_1543325647222",
+      "previous_sibling": "node_10_1543325600487"
     },
     {
       "type": "standard",
-      "title": "Check out of Scope",
-      "output": {},
-      "parent": "node_1_1554976046756",
-      "metadata": {
-        "_customization": {
-          "mcr": true
-        }
-      },
-      "conditions": "true",
-      "dialog_node": "node_2_1554976126838",
-      "digress_out": "allow_all"
-    },
-    {
-      "type": "standard",
-      "title": "Invalid light",
+      "title": "Time",
       "output": {
         "text": {
           "values": [
-            "I'm sorry, I can only turn on some car related lights."
+            "Will be replaced with the time by nodejs task!"
           ],
           "selection_policy": "sequential"
         }
       },
-      "parent": "node_4_1543324683575",
+      "parent": "node_9_1543325539198",
       "metadata": {},
-      "conditions": "true",
-      "dialog_node": "node_6_1543325050049",
-      "previous_sibling": "node_5_1543324943176"
-    },
-    {
-      "type": "standard",
-      "title": "Light On",
-      "output": {
-        "text": {
-          "values": [
-            "OK! Turning on @lights light."
-          ],
-          "selection_policy": "sequential"
-        }
-      },
-      "parent": "node_4_1543324683575",
-      "metadata": {},
-      "conditions": "@lights",
-      "dialog_node": "node_5_1543324943176"
-    },
-    {
-      "type": "event_handler",
-      "output": {
-        "text": "What day you want to come in?"
-      },
-      "parent": "slot_6_1543746650320",
-      "metadata": {},
-      "event_name": "focus",
-      "dialog_node": "handler_8_1543746650320",
-      "previous_sibling": "handler_7_1543746650320"
-    },
-    {
-      "type": "event_handler",
-      "parent": "slot_6_1543746650320",
-      "context": {
-        "date": "@sys-date"
-      },
-      "conditions": "@sys-date",
-      "event_name": "input",
-      "dialog_node": "handler_7_1543746650320"
-    },
-    {
-      "type": "response_condition",
-      "output": {
-        "text": {
-          "values": [
-            "Sorry I haven't learned answers to questions like this."
-          ],
-          "selection_policy": "sequential"
-        }
-      },
-      "parent": "node_2_1554976126838",
-      "metadata": {},
-      "conditions": "true",
-      "dialog_node": "node_4_1554976216336",
-      "previous_sibling": "node_3_1554976189000"
-    },
-    {
-      "type": "response_condition",
-      "output": {
-        "text": {
-          "values": [
-            "That question is out of scope for this application, take a look at the Conversation Enhanced application to handle questions like these."
-          ],
-          "selection_policy": "sequential"
-        }
-      },
-      "parent": "node_2_1554976126838",
-      "metadata": {},
-      "conditions": "@cardevice",
-      "dialog_node": "node_3_1554976189000"
+      "conditions": "@help:time",
+      "dialog_node": "node_10_1543325600487"
     },
     {
       "type": "event_handler",
@@ -1216,62 +1216,6 @@
       "conditions": "@sys-number",
       "event_name": "input",
       "dialog_node": "handler_13_1543746770664"
-    },
-    {
-      "type": "standard",
-      "title": "out_of_scope",
-      "output": {
-        "text": {
-          "values": [],
-          "selection_policy": "sequential"
-        }
-      },
-      "metadata": {},
-      "next_step": {
-        "behavior": "jump_to",
-        "selector": "condition",
-        "dialog_node": "node_2_1554976126838"
-      },
-      "conditions": "#out_of_scope",
-      "dialog_node": "node_1_1554976046756",
-      "previous_sibling": "node_3_1543324638003"
-    },
-    {
-      "type": "standard",
-      "title": "Goodbye",
-      "output": {
-        "text": {
-          "values": [
-            "Until our next meeting!"
-          ],
-          "selection_policy": "sequential"
-        }
-      },
-      "metadata": {},
-      "conditions": "#goodbye",
-      "dialog_node": "node_2_1543324518878",
-      "previous_sibling": "node_9_1543325539198"
-    },
-    {
-      "type": "standard",
-      "title": "Help",
-      "output": {
-        "text": {
-          "values": [
-            "How can I help you?"
-          ],
-          "selection_policy": "sequential"
-        }
-      },
-      "metadata": {},
-      "next_step": {
-        "behavior": "jump_to",
-        "selector": "user_input",
-        "dialog_node": "node_10_1543325600487"
-      },
-      "conditions": "#Help-Misc",
-      "dialog_node": "node_9_1543325539198",
-      "previous_sibling": "node_1_1543745967346"
     },
     {
       "type": "frame",
@@ -1295,7 +1239,7 @@
             },
             "dbname": "reservations"
           },
-          "credentials": "$my_creds",
+          "credentials": "$private.my_credentials",
           "result_variable": "$my_result"
         }
       ],
@@ -1334,6 +1278,41 @@
     },
     {
       "type": "standard",
+      "title": "Hello",
+      "output": {
+        "text": {
+          "values": [
+            "Hi! What can I do for you?"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "metadata": {},
+      "conditions": "#hello",
+      "dialog_node": "node_1_1543324451180",
+      "previous_sibling": "Welcome"
+    },
+    {
+      "type": "standard",
+      "title": "out_of_scope",
+      "output": {
+        "text": {
+          "values": [],
+          "selection_policy": "sequential"
+        }
+      },
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "condition",
+        "dialog_node": "node_2_1554976126838"
+      },
+      "conditions": "#out_of_scope",
+      "dialog_node": "node_1_1554976046756",
+      "previous_sibling": "node_3_1543324638003"
+    },
+    {
+      "type": "standard",
       "title": "Turn on",
       "output": {
         "text": {
@@ -1356,19 +1335,40 @@
     },
     {
       "type": "standard",
-      "title": "Hello",
+      "title": "Help",
       "output": {
         "text": {
           "values": [
-            "Hi! What can I do for you?"
+            "How can I help you?"
           ],
           "selection_policy": "sequential"
         }
       },
       "metadata": {},
-      "conditions": "#hello",
-      "dialog_node": "node_1_1543324451180",
-      "previous_sibling": "Welcome"
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "node_10_1543325600487"
+      },
+      "conditions": "#Help-Misc",
+      "dialog_node": "node_9_1543325539198",
+      "previous_sibling": "node_1_1543745967346"
+    },
+    {
+      "type": "standard",
+      "title": "Goodbye",
+      "output": {
+        "text": {
+          "values": [
+            "Until our next meeting!"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "metadata": {},
+      "conditions": "#goodbye",
+      "dialog_node": "node_2_1543324518878",
+      "previous_sibling": "node_9_1543325539198"
     },
     {
       "type": "standard",
@@ -1395,7 +1395,7 @@
       "dialog_node": "Welcome"
     }
   ],
-  "workspace_id": "c37fc40d-0e94-4af3-9703-6f3e956f6871",
+  "workspace_id": "e533bbb0-c107-4bb5-8794-107fb09972a9",
   "counterexamples": [],
   "system_settings": {
     "spelling_auto_correct": true

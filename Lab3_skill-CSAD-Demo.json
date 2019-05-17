@@ -593,7 +593,7 @@
       },
       "actions": [
         {
-          "name": "kps%4xxxxxxxxxxxxxxxxxxxxxxxxxons/Bluemix_cfworkshopdb_workshopkey/create-document",
+          "name": "kps%xxxxxxxxxom_us-south_WatsonDataPlatform/actions/Bluemix_cfworkshopdb_workshopkey/create-document",
           "type": "server",
           "parameters": {
             "doc": {
@@ -604,7 +604,7 @@
             },
             "dbname": "reservations"
           },
-          "credentials": "$my_creds",
+          "credentials": "$private.my_credentials",
           "result_variable": "$my_result"
         }
       ],
@@ -730,7 +730,7 @@
       "context": {
         "private": {
           "my_credentials": {
-            "api_key": "6ffd7aff-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxAphT3ifB1gKPIQvQ"
+            "api_key": "<yourCloudFunctionsAPIKey>"
           }
         },
         "Alarmonoff": "off",
@@ -747,5 +747,5 @@
     "spelling_auto_correct": true
   },
   "learning_opt_out": false,
-  "status": "Training"
+  "status": "Available"
 }
