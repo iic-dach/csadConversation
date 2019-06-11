@@ -55,7 +55,7 @@ var config = {
 module.exports = config;
 ***********************************
 ******** Step 57 *****************
-const DiscoveryV1 = require('watson-developer-cloud/discovery/v1');
+const DiscoveryV1 = require('ibm-watson/discovery/v1');
 ***********************************
 ******** Step 59 *****************
 const discovery = new DiscoveryV1(config.watson.discovery);
