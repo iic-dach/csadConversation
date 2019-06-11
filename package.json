@@ -7,13 +7,17 @@
     "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "engines": {
+    "node": "^10.15.0",
+    "npm": "^6.4.1"
+  },
   "author": "Klaus-Peter Schlotter",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.3",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
-    "morgan": "^1.9.1",
-    "watson-developer-cloud": "^3.18.2"
+    "ibm-watson": "^4.2.0",
+    "morgan": "^1.9.1"
   }
 }
