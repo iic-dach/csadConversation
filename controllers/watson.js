@@ -1,4 +1,4 @@
-const AssistantV1 = require('watson-developer-cloud/assistant/v1');
+const AssistantV1 = require('ibm-watson/assistant/v1');
 const config = require('../config');
 
 const watsonAssistant = new AssistantV1(config.watson.assistant);
