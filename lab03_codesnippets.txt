@@ -106,7 +106,7 @@ https://<your service host>/assistant/api/v1/workspaces/<your workspaceid>/dialo
 }
 ***********************************
 ******** Step 102 username/passowrd version *****************
-npm install --save express ejs morgan body-parser watson-developer-cloud
+npm install --save express ejs morgan body-parser ibm-watson
 ***********************************
 ******** Step 103 username/passowrd version *****************
 var config = { 
