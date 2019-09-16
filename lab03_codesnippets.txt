@@ -1,10 +1,12 @@
-******** Step 81 username/passowrd version *****************
+******** Step 82 username/passowrd version *****************
 {
   "context": {
     "private": {
       "my_credentials": {
         "api_key": "<yourCloudFunctionsAPIKey"
-      }
+      },
+      "Alarmonoff": "off",
+      "app_action": ""
     }
   },
   "output": {
@@ -44,13 +46,42 @@
   ]
 }
 ***********************************
-******** Step 92 username/passowrd version *****************
+******** Step 84 iam_apikey version *****************
+{
+  "output": {
+    "text": {
+      "values": [],
+      "selection_policy": "sequential"
+    }
+  },
+  "actions": [
+    {
+      "name": "/kpschxxxx.com_dev_gb/actions/Bluemix_kps-cloudintroDb_newkey/create-document",
+      "type": "server",
+      "parameters": {
+        "doc": {
+          "date": "$date",
+          "time": "$time",
+          "number": "$number",
+          "locations": "$locations"
+        },
+        "dbname": "reservations",
+        "iamApiKey": "<apikey from your Cloudant credentials>",
+        "url": "<url from your Cloudant credentials>"
+      },
+      "credentials": "$private.my_credentials",
+      "result_variable": "$my_result"
+    }
+  ]
+}
+***********************************
+******** Step 93 username/passowrd version *****************
 https://<host of your service>/assistant/api/v1/workspaces?version=2019-02-28
 ***********************************
-******** Step 94 username/passowrd version *****************
+******** Step 95 username/passowrd version *****************
 https://<host of your service>/assistant/api/v1/workspaces/<YOUR workspaceid from Step18>?version=2019-02-28
 ***********************************
-******** Step 95 username/passowrd version *****************
+******** Step 96 username/passowrd version *****************
 https://<host of your service>/assistant/api/v1/workspaces/<YOUR workspaceid from Step19>/message?version=2019-02-28
 
 {"input": 
@@ -65,7 +96,7 @@ https://<host of your service>/assistant/api/v1/workspaces/<YOUR workspaceid fro
     }
 }
 ***********************************
-******** Step 96 username/passowrd version *****************
+******** Step 97 username/passowrd version *****************
 {"input": 
     {"text": "turn on the lights"},
     "context": {
@@ -91,7 +122,7 @@ https://<host of your service>/assistant/api/v1/workspaces/<YOUR workspaceid fro
 
 https://<your service host>/assistant/api/v1/workspaces/<your workspaceid>/dialog_nodes?version=2019-02-28
 ***********************************
-******** Step 99 username/passowrd version *****************
+******** Step 100 username/passowrd version *****************
 {
   "name": "csadconversation",
   "version": "1.0.0",
@@ -105,10 +136,10 @@ https://<your service host>/assistant/api/v1/workspaces/<your workspaceid>/dialo
   "license": "ISC"
 }
 ***********************************
-******** Step 102 username/passowrd version *****************
+******** Step 103 username/passowrd version *****************
 npm install --save express ejs morgan body-parser ibm-watson
 ***********************************
-******** Step 103 username/passowrd version *****************
+******** Step 104 username/passowrd version *****************
 var config = { 
   watson: {
     assistant: { 
@@ -122,7 +153,7 @@ var config = {
 }; 
 module.exports = config;
 ***********************************
-******** Step 103 apikey version *****************
+******** Step 104 apikey version *****************
 var config = { 
   watson: {
     assistant: { 
@@ -135,7 +166,7 @@ var config = {
 }; 
 module.exports = config;
 ***********************************
-******** Step 105 *****************
+******** Step 106 *****************
 const path = require('path');
 
 const express = require('express');
@@ -162,7 +193,7 @@ app.listen(port, () => {
   console.log('Express app started on port ' + port);
 })
 ***********************************
-******** Step 106 *****************
+******** Step 107 *****************
 const express = require('express');
 
 const watsonController = require('../controllers/watson');
@@ -175,7 +206,7 @@ router.post('/', watsonController.postMessage);
 
 module.exports = router;
 ***********************************
-******** Step 107 *****************
+******** Step 108 *****************
 const AssistantV1 = require('ibm-watson/assistant/v1');
 const config = require('../config');
 
@@ -216,7 +247,7 @@ assistantMessage = (params) => {
   });
 }
 ***********************************
-******** Step 109 *****************
+******** Step 110 *****************
 <!DOCTYPE html>
 <html>
   <head>
@@ -231,17 +262,17 @@ assistantMessage = (params) => {
     <div class="container" style="text-align: center"><body class="container">
       <div class="row"><div class="col-md-12"><p><h2>IBM EAG Watson Assistant Lab</h2></p></div></div>
 ***********************************
-******** Step 110 *****************
+******** Step 111 *****************
     <p><small>IBM Ecosystem Advocacy Group – 2019</small></p>
   </body>
 </html>
 ***********************************
-******** Step 111 *****************
+******** Step 112 *****************
 <% include header %>
 <h2>404! Page not found.</h2>
 <% include footer %>
 ***********************************
-******** Step 112 *****************
+******** Step 113 *****************
 <% include header %>
 <p/>
 <div class="row">
@@ -262,7 +293,7 @@ assistantMessage = (params) => {
 </div>
 <% include footer %>
 ***********************************
-******** Step 115 *****************
+******** Step 116 *****************
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -276,7 +307,7 @@ a {
   margin-right: 5px;
 }
 ***********************************
-******** Step 116 *****************
+******** Step 117 *****************
 var context = {};
 
 function updateChatLog(user, message) {
@@ -326,7 +357,7 @@ function init() {
   sendMessage(); 
 } 
 ***********************************
-******** Step 129 *****************
+******** Step 130 *****************
       if (!response.input.text) {
         return res.json(response);
       }
@@ -347,7 +378,7 @@ function init() {
         }
       }
 ***********************************
-******** Step 138 username/passowrd version *****************
+******** Step 139 username/passowrd version *****************
 applications:
 - name: csadConversation-xxx
   path: .
