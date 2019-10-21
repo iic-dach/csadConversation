@@ -25,7 +25,7 @@ function sendMessage() {
         if (xhr.status == 200) { 
         var json = JSON.parse(xhr.responseText); 
         context = json.context;
-          updateChatLog("Watson", json.output.text); 
+        updateChatLog("Watson", json.result.output.generic[0].text);
       }
     }
   }

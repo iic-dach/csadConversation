@@ -1,31 +1,43 @@
-******** Step 82 username/passowrd version *****************
+******** Step 83 username/passowrd version *****************
 {
+  "output": {
+    "generic": [
+      {
+        "values": [
+          {
+            "text": "Welcome to CSAD Demo!"
+          }
+        ],
+        "response_type": "text",
+        "selection_policy": "sequential"
+      }
+    ]
+  },
   "context": {
     "private": {
       "my_credentials": {
-        "api_key": "<yourCloudFunctionsAPIKey"
-      },
-      "Alarmonoff": "off",
-      "app_action": ""
-    }
-  },
-  "output": {
-    "text": {
-      "values": [
-        "Welcome to the CSAD Demo!"
-      ],
-      "selection_policy": "sequential"
-    }
+        "api_key": "<yourCloudFunctionsAPIKey>"
+      }
+    },
+    "Alarmonoff": "off",
+    "app_action": ""
   }
 }
 ***********************************
-******** Step 84 username/passowrd version *****************
+******** Step 86 username/passowrd version *****************
 {
   "output": {
-    "text": {
-      "values": [],
-      "selection_policy": "sequential"
-    }
+    "generic": [
+      {
+        "values": [
+          {
+            "text": "Great, I have a table of $number people, on $date at $time at our $locations store."
+          }
+        ],
+        "response_type": "text",
+        "selection_policy": "sequential"
+      }
+    ]
   },
   "actions": [
     {
@@ -46,7 +58,7 @@
   ]
 }
 ***********************************
-******** Step 84 iam_apikey version *****************
+******** Step 86 NO LEGACY CREDENTIALS - iam_apikey version *****************
 {
   "output": {
     "text": {
@@ -75,13 +87,13 @@
   ]
 }
 ***********************************
-******** Step 93 username/passowrd version *****************
+******** Step 94 username/passowrd version *****************
 https://<host of your service>/assistant/api/v1/workspaces?version=2019-02-28
 ***********************************
-******** Step 95 username/passowrd version *****************
+******** Step 96 username/passowrd version *****************
 https://<host of your service>/assistant/api/v1/workspaces/<YOUR workspaceid from Step18>?version=2019-02-28
 ***********************************
-******** Step 96 username/passowrd version *****************
+******** Step 97 username/passowrd version *****************
 https://<host of your service>/assistant/api/v1/workspaces/<YOUR workspaceid from Step19>/message?version=2019-02-28
 
 {"input": 
@@ -122,7 +134,7 @@ https://<host of your service>/assistant/api/v1/workspaces/<YOUR workspaceid fro
 
 https://<your service host>/assistant/api/v1/workspaces/<your workspaceid>/dialog_nodes?version=2019-02-28
 ***********************************
-******** Step 100 username/passowrd version *****************
+******** Step 104 username/passowrd version *****************
 {
   "name": "csadconversation",
   "version": "1.0.0",
@@ -136,10 +148,10 @@ https://<your service host>/assistant/api/v1/workspaces/<your workspaceid>/dialo
   "license": "ISC"
 }
 ***********************************
-******** Step 103 username/passowrd version *****************
+******** Step 107 username/passowrd version *****************
 npm install --save express ejs morgan body-parser ibm-watson
 ***********************************
-******** Step 104 username/passowrd version *****************
+******** Step 108 username/passowrd version *****************
 var config = { 
   watson: {
     assistant: { 
@@ -147,26 +159,26 @@ var config = {
       password: "<yourServicePassword>", 
       version: "2019-02-28",
       url: "yourServiceUrl",
-      workspace_id: "<yourWorkspaceId>" 
+      assistantId: "<yourAssistantId>" 
     } 
   } 
 }; 
 module.exports = config;
 ***********************************
-******** Step 104 apikey version *****************
+******** Step 108 apikey version *****************
 var config = { 
   watson: {
     assistant: { 
       iam_apikey: "<yourApiKey>", 
       version: "2019-02-28",
       url: "yourServiceUrl",
-      workspace_id: "<yourWorkspaceId>" 
+      assistantId: "<yourAssistantId>" 
     } 
   } 
 }; 
 module.exports = config;
 ***********************************
-******** Step 106 *****************
+******** Step 110 *****************
 const path = require('path');
 
 const express = require('express');
@@ -193,7 +205,7 @@ app.listen(port, () => {
   console.log('Express app started on port ' + port);
 })
 ***********************************
-******** Step 107 *****************
+******** Step 111 *****************
 const express = require('express');
 
 const watsonController = require('../controllers/watson');
@@ -206,7 +218,7 @@ router.post('/', watsonController.postMessage);
 
 module.exports = router;
 ***********************************
-******** Step 108 *****************
+******** Step 112 *****************
 const AssistantV1 = require('ibm-watson/assistant/v1');
 const config = require('../config');
 
@@ -247,7 +259,7 @@ assistantMessage = (params) => {
   });
 }
 ***********************************
-******** Step 110 *****************
+******** Step 114 *****************
 <!DOCTYPE html>
 <html>
   <head>
@@ -262,17 +274,17 @@ assistantMessage = (params) => {
     <div class="container" style="text-align: center"><body class="container">
       <div class="row"><div class="col-md-12"><p><h2>IBM EAG Watson Assistant Lab</h2></p></div></div>
 ***********************************
-******** Step 111 *****************
+******** Step 115 *****************
     <p><small>IBM Ecosystem Advocacy Group – 2019</small></p>
   </body>
 </html>
 ***********************************
-******** Step 112 *****************
+******** Step 116 *****************
 <% include header %>
 <h2>404! Page not found.</h2>
 <% include footer %>
 ***********************************
-******** Step 113 *****************
+******** Step 117 *****************
 <% include header %>
 <p/>
 <div class="row">
@@ -293,7 +305,7 @@ assistantMessage = (params) => {
 </div>
 <% include footer %>
 ***********************************
-******** Step 116 *****************
+******** Step 120 *****************
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -307,7 +319,7 @@ a {
   margin-right: 5px;
 }
 ***********************************
-******** Step 117 *****************
+******** Step 121 *****************
 var context = {};
 
 function updateChatLog(user, message) {
@@ -335,7 +347,7 @@ function sendMessage() {
         if (xhr.status == 200) { 
         var json = JSON.parse(xhr.responseText); 
         context = json.context;
-          updateChatLog("Watson", json.output.text); 
+          updateChatLog("Watson", json.result.output.generic[0].text); 
       }
     }
   }
@@ -357,28 +369,28 @@ function init() {
   sendMessage(); 
 } 
 ***********************************
-******** Step 130 *****************
-      if (!response.input.text) {
-        return res.json(response);
+******** Step 131 *****************
+    if (text === '') {
+      return res.json(result);
+    }
+    console.log("Detected input: " + text);
+    if (result.result.output.intents.length > 0) {
+      var intent = result.result.output.intents[0];
+      console.log("Detected intent: " + intent.intent);
+      console.log("Confidence: " + intent.confidence);
+    }
+    if (result.result.output.entities.length > 0) {
+      var entity = result.result.output.entities[0];
+      console.log("Detected entity: " + entity.entity);
+      console.log("Value: " + entity.value);
+      if ((entity.entity === 'help') && (entity.value === 'time')) {
+        var msg = 'The current time is ' + new Date().toLocaleTimeString();
+        console.log(msg);
+        result.result.output.generic[0].text = msg;
       }
-      console.log("Detected input: " + response.input.text);
-      if (response.intents.length > 0) {
-        var intent = response.intents[0];
-        console.log("Detected intent: " + intent.intent);
-        console.log("Confidence: " + intent.confidence);
-      }
-      if (response.entities.length > 0) {
-        var entity = response.entities[0];
-        console.log("Detected entity: " + entity.entity);
-        console.log("Value: " + entity.value);
-        if ((entity.entity === 'help') && (entity.value === 'time')) {
-          var msg = 'The current time is ' + new Date().toLocaleTimeString();
-          console.log(msg);
-          response.output.text = msg;
-        }
-      }
+    }
 ***********************************
-******** Step 139 username/passowrd version *****************
+******** Step 140 username/passowrd version *****************
 applications:
 - name: csadConversation-xxx
   path: .
