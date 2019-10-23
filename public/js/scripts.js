@@ -25,7 +25,14 @@ function sendMessage() {
         if (xhr.status == 200) { 
         var json = JSON.parse(xhr.responseText); 
         context = json.context;
-          updateChatLog("Watson", json.output.text); 
+        if (json.result.output.generic[0].response_type === "text") {
+          updateChatLog("Watson", json.result.output.generic[0].text);
+        } else {
+          let title = "<b>" + json.result.output.generic[0].results[0].title + "</b><br/>";
+          text = title.concat(json.result.output.generic[0].results[0].body.substring(0, 50)).concat('...');
+          updateChatLog("Watson", text);
+        }
+        
       }
     }
   }

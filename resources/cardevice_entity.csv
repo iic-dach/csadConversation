@@ -24,4 +24,4 @@ cardevice,fuel
 cardevice,engine coolant,coolant
 cardevice,brake,parking break
 cardevice,doors,front doors,back doors
-cardevice tire, tire pressure
+cardevice, tire, tire pressure
