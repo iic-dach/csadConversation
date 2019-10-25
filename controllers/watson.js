@@ -89,6 +89,8 @@ exports.postMessage = (req, res, next) => {
         // console.log(JSON.stringify(result, null, 2)); 
         res.json(assistantResult);
       }
+    } else {
+      res.json(assistantResult);
     }
   })
   .catch(err => {
