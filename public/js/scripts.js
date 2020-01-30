@@ -2,8 +2,13 @@ var context = {};
 
 function updateChatLog(user, message) {
   if (message) { 
-    var div = document.createElement("div"); 
-    div.innerHTML = "<b>" + user + "</b>: " + message;
+    var div = document.createElement("div");
+    if (user === 'Watson') {
+      div.className = 'assistant'; 
+    } else {
+      div.className = 'wa-user';
+    } 
+    div.innerHTML = "<b>" + user + ":</b> " + message + "<br/>";
     document.getElementById("history").appendChild(div); 
     document.getElementById("text").value = ""; 
   } 
