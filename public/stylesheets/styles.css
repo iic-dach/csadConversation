@@ -10,3 +10,30 @@ a {
 .form-control {
   margin-right: 5px;
 }
+
+.wa-user {
+  border-radius: 25px;
+  background: #F0E68C;
+  padding: 10px;
+  width: 90%;
+  text-align: right;
+  margin-bottom: 5px;
+  float: right;
+}
+
+.assistant {
+  border-radius: 25px;
+  background: #D3D3D3;
+  padding: 10px;
+  width: 90%;
+  margin-bottom: 5px;
+  float: left;
+}
+
+.histLabel {
+  margin-bottom: 5px;
+}
+
+.buttonRow{
+  margin-bottom: 5px;
+} 
