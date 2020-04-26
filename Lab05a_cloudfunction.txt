@@ -1,7 +1,7 @@
 const axios = require("axios");
 const discoveryUrl =
-"https://gateway.watsonplatform.net/discovery/api/v1/environments/28496dd5-0ae3-45c2-af75-80c3371112f1/collections/5bc5a9c9-706c-4862-8ed6-f957de5576b2/query?version=2019-04-30";
-const auth = "Basic " + new Buffer.from("apikey" + ":" + "sMkqaK5HZF9tCNeUZIOx8RiiO_0yITYjfxm3h5QXp9tB").toString("base64");
+"https://gateway.watsonplatform.net/discovery/api/v1/environments/{environmentId}/collections/{your collectionId}/query?version=2019-04-30";
+const auth = "Basic " + new Buffer.from("apikey" + ":" + "{your Discovery API key}").toString("base64");
 
 async function main(params) {
   if (params.action === "gettime") {
