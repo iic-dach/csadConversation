@@ -1,0 +1,18 @@
+function main(params) {
+  if (params.action === "gettime") {
+    const deTime = new Date().toLocaleString("de-DE", {timeZone: "Europe/Berlin"});
+    return {
+      statusCode: 200,
+      headers: {
+        Content_Type: "application/json",
+      },
+      body: { date: deTime },
+    };
+  } else {
+    return {
+      statusCode: 404,
+      headers: { "Content-Type": "application/json" },
+      body: {text: `action ${params.action} not defined` }
+    };
+  }
+}
