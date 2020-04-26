@@ -11,7 +11,7 @@ async function main(params) {
       headers: {
         Content_Type: "application/json"
       },
-      body: { date: deTime },
+      body: { message: deTime },
     };
   } else if (params.action === "discovery") {
     try {
@@ -34,7 +34,7 @@ async function main(params) {
           "Content-Type": "application/json",
           Accept: "application/json"
         },
-        body: { text: response.data.passages[0].passage_text }
+        body: { message: response.data.passages[0].passage_text }
       };
     } catch (err) {
       return { body: {text: err.message }};
@@ -43,7 +43,7 @@ async function main(params) {
     return {
       statusCode: 404,
       headers: { "Content-Type": "application/json" },
-      body: {text: `action ${params.action} not defined` }
+      body: {message: `action ${params.action} not defined` }
     };
   }
 }

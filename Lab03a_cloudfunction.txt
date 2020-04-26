@@ -6,13 +6,13 @@ function main(params) {
       headers: {
         Content_Type: "application/json"
       },
-      body: { date: deTime },
+      body: { message: deTime },
     };
   } else {
     return {
       statusCode: 404,
       headers: { "Content-Type": "application/json" },
-      body: {text: `action ${params.action} not defined` }
+      body: { message: `action ${params.action} not defined` }
     };
   }
 }

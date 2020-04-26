@@ -248,7 +248,7 @@
   },
   "webhooks": [
     {
-      "url": "https://eu-de.functions.cloud.ibm.com/api/v1/web/kps%40de.ibm.com_eu-de_dev/default/csadbot",
+      "url": "https://eu-de.functions.cloud.ibm.com/api/v1/xxxxxxxxxxxxxxxxxxx/default/csadbot",
       "name": "main_webhook",
       "headers": [
         {
