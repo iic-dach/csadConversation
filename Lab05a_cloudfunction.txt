@@ -9,7 +9,7 @@ async function main(params) {
     return {
       statusCode: 200,
       headers: {
-        Content_Type: "application/json",
+        Content_Type: "application/json"
       },
       body: { date: deTime },
     };
@@ -21,7 +21,7 @@ async function main(params) {
         data: {
           natural_language_query: params.query,
           passages: true,
-          "passages.count": 1,
+          "passages.count": 1
         },
         headers: {
           Authorization: auth,
@@ -32,7 +32,7 @@ async function main(params) {
         statusCode: response.status,
         headers: {
           "Content-Type": "application/json",
-          Accept: "application/json",
+          Accept: "application/json"
         },
         body: { text: response.data.passages[0].passage_text }
       };

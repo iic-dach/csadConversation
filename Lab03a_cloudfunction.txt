@@ -4,7 +4,7 @@ function main(params) {
     return {
       statusCode: 200,
       headers: {
-        Content_Type: "application/json",
+        Content_Type: "application/json"
       },
       body: { date: deTime },
     };
