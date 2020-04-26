@@ -1,0 +1,49 @@
+const axios = require("axios");
+const discoveryUrl =
+"https://gateway.watsonplatform.net/discovery/api/v1/environments/28496dd5-0ae3-45c2-af75-80c3371112f1/collections/5bc5a9c9-706c-4862-8ed6-f957de5576b2/query?version=2019-04-30";
+const auth = "Basic " + new Buffer.from("apikey" + ":" + "sMkqaK5HZF9tCNeUZIOx8RiiO_0yITYjfxm3h5QXp9tB").toString("base64");
+
+async function main(params) {
+  if (params.action === "gettime") {
+    const deTime = new Date().toLocaleString("de-DE", {timeZone: "Europe/Berlin"});
+    return {
+      statusCode: 200,
+      headers: {
+        Content_Type: "application/json",
+      },
+      body: { date: deTime },
+    };
+  } else if (params.action === "discovery") {
+    try {
+      let response = await axios({
+        method: "post",
+        url: discoveryUrl,
+        data: {
+          natural_language_query: params.query,
+          passages: true,
+          "passages.count": 1,
+        },
+        headers: {
+          Authorization: auth,
+          "Content-Type": "application/json"
+        },
+      });
+      return {
+        statusCode: response.status,
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: { text: response.data.passages[0].passage_text }
+      };
+    } catch (err) {
+      return { body: {text: err.message }};
+    }
+  } else {
+    return {
+      statusCode: 404,
+      headers: { "Content-Type": "application/json" },
+      body: {text: `action ${params.action} not defined` }
+    };
+  }
+}
